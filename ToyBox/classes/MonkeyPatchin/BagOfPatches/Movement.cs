@@ -18,7 +18,6 @@ using ModKit;
 using System;
 using System.Linq;
 using UnityEngine;
-using UnityModManager = UnityModManagerNet.UnityModManager;
 
 namespace ToyBox.BagOfPatches {
     internal static class Movement {

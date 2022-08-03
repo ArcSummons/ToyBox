@@ -1,13 +1,12 @@
-﻿using System;
-using HarmonyLib;
-using UnityModManagerNet;
+﻿using HarmonyLib;
 using Kingmaker;
 using Kingmaker.Enums;
-using Kingmaker.UnitLogic.Alignments;
-using UnityEngine;
-using Kingmaker.UnitLogic.FactLogic;
 using Kingmaker.UnitLogic.Abilities.Components.CasterCheckers;
+using Kingmaker.UnitLogic.Alignments;
+using Kingmaker.UnitLogic.FactLogic;
 using ModKit;
+using System;
+using UnityEngine;
 
 namespace ToyBox {
     public static class AlignmentPatches {

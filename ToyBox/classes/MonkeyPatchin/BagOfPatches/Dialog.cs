@@ -1,28 +1,21 @@
 ﻿
 using HarmonyLib;
+using JetBrains.Annotations;
 using Kingmaker;
+using Kingmaker.Blueprints;
+using Kingmaker.Controllers.Dialog;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
-using Evalutors = Kingmaker.Designers.EventConditionActionSystem.Evaluators;
+using Kingmaker.DialogSystem;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.EntitySystem.Entities;
-using Kingmaker.UnitLogic.Parts;
-using ModKit;
-using System.Linq;
-using System;
-using Kingmaker.DialogSystem;
-using System.Collections.Generic;
-using Kingmaker.Utility;
 using Kingmaker.UnitLogic;
-using Kingmaker.Controllers.Dialog;
-using Kingmaker.Blueprints;
+using Kingmaker.Utility;
+using ModKit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using Kingmaker.Controllers;
-using Kingmaker.EntitySystem;
-using Random = System.Random;
-using JetBrains.Annotations;
-using Kingmaker.Localization;
-using Kingmaker.ElementsSystem;
-using Kingmaker.DialogSystem.State;
+using Evalutors = Kingmaker.Designers.EventConditionActionSystem.Evaluators;
 
 namespace ToyBox.BagOfPatches {
     internal static class Dialog {
@@ -354,5 +347,5 @@ namespace ToyBox.BagOfPatches {
             }
         }
 #endif
-        }
+    }
 }

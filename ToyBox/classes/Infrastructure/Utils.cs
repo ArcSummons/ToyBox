@@ -1,11 +1,7 @@
 ﻿using Kingmaker;
-using Kingmaker.Blueprints.Area;
 using Kingmaker.Blueprints.Items;
 using Kingmaker.Items;
-using Kingmaker.UI.MVVM._PCView.ServiceWindows.LocalMap;
-using Kingmaker.UI.MVVM._VM.ServiceWindows.LocalMap.Utils;
 using Kingmaker.Utility;
-using Kingmaker.Visual.LocalMap;
 using ModKit;
 using Newtonsoft.Json;
 using Owlcat.Runtime.Core.Utils;

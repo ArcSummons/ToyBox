@@ -13,12 +13,9 @@ using Kingmaker.UI.MVVM._PCView.Tooltip.Bricks;
 using Kingmaker.UI.MVVM._PCView.Vendor;
 using Kingmaker.UI.MVVM._VM.ServiceWindows.Inventory;
 using Kingmaker.UI.MVVM._VM.Slots;
-using ModKit;
 using Owlcat.Runtime.UI.MVVM;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityModManagerNet;
 
 namespace ToyBox.BagOfPatches {
     internal static class Loot {
@@ -135,8 +132,8 @@ namespace ToyBox.BagOfPatches {
                 }
             }
         }
-        
-       [HarmonyPatch(typeof(LootCollectorPCView), nameof(VendorPCView.BindViewImplementation))]
+
+        [HarmonyPatch(typeof(LootCollectorPCView), nameof(VendorPCView.BindViewImplementation))]
         private static class LootCollectorPCView_BindViewImplementation_Patch {
             public static void Postfix(LootCollectorPCView __instance) {
                 if (!settings.toggleColorLootByRarity) return;

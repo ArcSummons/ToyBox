@@ -1,16 +1,13 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
 
-using System;
-using System.Linq;
 using Kingmaker;
 using Kingmaker.Cheats;
 using Kingmaker.Kingdom;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Alignments;
-using Kingmaker.UI.Dialog;
-using Kingmaker.Utility;
 using ModKit;
+using System;
+using System.Linq;
 using ToyBox;
 using UnityEngine;
 using UnityModManagerNet;
@@ -409,7 +406,7 @@ namespace ToyBox {
                     50.space();
                     if (Toggle("Allow Mouse3 Drag to adjust Camera Tilt", ref settings.toggleCameraPitch)) { Main.resetExtraCameraAngles = true; }
                     100.space();
-                    Label("Experimental".orange() + " This allows you to adjust pitch (Camera Tilt) by holding down Mouse3 (which previously just rotated).".green() + " Note:".orange()+ " Holding alt while Mouse3 dragging lets you move the camera location.".green());
+                    Label("Experimental".orange() + " This allows you to adjust pitch (Camera Tilt) by holding down Mouse3 (which previously just rotated).".green() + " Note:".orange() + " Holding alt while Mouse3 dragging lets you move the camera location.".green());
                 },
                 () => {
                     50.space();

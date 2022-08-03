@@ -6,7 +6,6 @@ using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Designers.Mechanics.Facts;
 //using Kingmaker.Controllers.GlobalMap;
 using Kingmaker.EntitySystem.Entities;
 //using Kingmaker.UI._ConsoleUI.Models;
@@ -69,7 +68,7 @@ namespace ToyBox.Multiclass {
                     var levelEntry = progressionData.GetLevelEntry(lvl);
                     Mod.Debug($"    LevelUpHelper_UpdateProgression_Patch - {string.Join(", ", levelEntry.Features.Select(f => f.name.yellow()))}");
 
-    LevelUpHelper.AddFeaturesFromProgression(state, unit, levelEntry.Features, (FeatureSource)progression, lvl);
+                    LevelUpHelper.AddFeaturesFromProgression(state, unit, levelEntry.Features, (FeatureSource)progression, lvl);
                 }
                 return false;
             }
@@ -197,7 +196,7 @@ namespace ToyBox.Multiclass {
             }
         }
         [HarmonyPatch(typeof(UnitHelper), nameof(UnitHelper.CopyInternal))]
-        private static class UnitProgressionData_CopyFrom_Patch { 
+        private static class UnitProgressionData_CopyFrom_Patch {
             private static void Postfix(UnitEntityData unit, UnitEntityData __result) {
                 if (!settings.toggleMulticlass) return;
                 // When upgrading, this method will be used to copy a UnitEntityData, which involves copying UnitProgressionData

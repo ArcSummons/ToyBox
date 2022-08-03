@@ -1,7 +1,4 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using UnityModManagerNet;
-using System;
-using System.Linq;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
 using Kingmaker.Blueprints.Items.Weapons;
@@ -11,8 +8,10 @@ using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Class.LevelUp;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
 using Kingmaker.Utility;
-using ModKit.Utility;
 using ModKit;
+using ModKit.Utility;
+using System;
+using System.Linq;
 
 namespace ToyBox.Multiclass {
     public static class WrathExtensionsMulticlass {

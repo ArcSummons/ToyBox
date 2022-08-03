@@ -1,14 +1,10 @@
 ﻿using HarmonyLib;
 using Kingmaker;
 using Kingmaker.UI.MVVM._PCView.ActionBar;
-using Kingmaker.UI.MVVM._VM.Tooltip.Templates;
 using Kingmaker.UI.UnitSettings;
 using ModKit;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI.Extensions;
@@ -30,7 +26,7 @@ namespace ToyBox.BagOfPatches {
                 var rowCount = (int)(Math.Ceiling((float)itemCount / columnCount));
                 if (isSpellGroup) {
                     //rowCount += 1; // nudge for spell group ??? TODO - why?
-                    rowCount = Math.Max(rowCount, (int)Math.Ceiling((((__instance as ActionBarSpellGroupPCView).m_Levels.Count - 1) * 26)/ 53f)) + 1;
+                    rowCount = Math.Max(rowCount, (int)Math.Ceiling((((__instance as ActionBarSpellGroupPCView).m_Levels.Count - 1) * 26) / 53f)) + 1;
                 }
                 var width = columnCount * 53f;
                 var xoffset = (columnCount - 5) * 53f;

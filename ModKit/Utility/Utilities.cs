@@ -80,21 +80,24 @@ namespace ModKit
 
             return s;
         }
-        public static string MergeSpaces(this string str, bool trim = false) {
+        public static string MergeSpaces(this string str, bool trim = false)
+        {
             if (str == null)
                 return null;
-            else {
+            else
+            {
                 StringBuilder stringBuilder = new StringBuilder(str.Length);
 
                 int i = 0;
-                foreach (char c in str) {
+                foreach (char c in str)
+                {
                     if (c != ' ' || i == 0 || str[i - 1] != ' ')
                         stringBuilder.Append(c);
                     i++;
                 }
                 if (trim)
                     return stringBuilder.ToString().Trim();
-                else 
+                else
                     return stringBuilder.ToString();
             }
         }

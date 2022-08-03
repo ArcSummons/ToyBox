@@ -1,11 +1,9 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using UnityEngine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Spells;
+using Kingmaker.Blueprints.Facts;
+using Kingmaker.EntitySystem;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities;
@@ -13,11 +11,13 @@ using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using ModKit;
-using static ModKit.UI;
 using ModKit.Utility;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using ToyBox.classes.Infrastructure;
-using Kingmaker.EntitySystem;
-using Kingmaker.Blueprints.Facts;
+using UnityEngine;
+using static ModKit.UI;
 
 namespace ToyBox {
     public class FactsEditor {

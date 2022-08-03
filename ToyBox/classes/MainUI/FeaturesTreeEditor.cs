@@ -1,6 +1,5 @@
 ﻿using Kingmaker;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic;
@@ -62,7 +61,7 @@ namespace ToyBox {
                             void draw(FeaturesTree.FeatureNode node) {
                                 using (UI.HorizontalScope()) {
                                     var levelText = node.Level == 0 ? "" : $" {node.Level} - ";
-                                    var blueprintName =  $"[{node.Blueprint.name}]".color(node.IsMissing ? RGBA.maroon : RGBA.aqua);
+                                    var blueprintName = $"[{node.Blueprint.name}]".color(node.IsMissing ? RGBA.maroon : RGBA.aqua);
                                     var titleText = $"{levelText}{node.Name.Bold()} {blueprintName}";
                                     if (node.ChildNodes.Count > 0) {
                                         if (node.Expanded == ToggleState.None) {

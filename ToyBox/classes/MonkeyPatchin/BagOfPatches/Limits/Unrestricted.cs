@@ -3,17 +3,12 @@ using HarmonyLib;
 using Kingmaker;
 using Kingmaker.Blueprints.Items.Components;
 using Kingmaker.Blueprints.Items.Equipment;
+using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.DialogSystem.Blueprints;
 using Kingmaker.Items;
-using Kingmaker.Designers.EventConditionActionSystem.Conditions;
-using ModKit;
-using Kingmaker.ElementsSystem;
-using Kingmaker.Kingdom.Settlements;
 using Kingmaker.UnitLogic;
-using System;
+using ModKit;
 using System.Collections.Generic;
-using UnityModManager = UnityModManagerNet.UnityModManager;
-using Kingmaker.EntitySystem.Stats;
 using static Kingmaker.EntitySystem.Stats.ModifiableValue;
 
 namespace ToyBox.BagOfPatches {
@@ -113,7 +108,7 @@ namespace ToyBox.BagOfPatches {
                 }
             }
         }
-        
+
         [HarmonyPatch(typeof(Spellbook), nameof(Spellbook.CasterLevel), MethodType.Getter)]
         public static class Spellbook_CasterLevel_Patch {
             public static void Postfix(ref int __result, Spellbook __instance) {
@@ -122,7 +117,7 @@ namespace ToyBox.BagOfPatches {
                 }
             }
         }
-        
+
         [HarmonyPatch(typeof(Modifier), nameof(Modifier.Stacks), MethodType.Getter)]
         public static class ModifiableValue_UpdateValue_Patch {
             public static bool Prefix(Modifier __instance) {

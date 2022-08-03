@@ -1,36 +1,20 @@
 ﻿// borrowed shamelessly and enhanced from Bag of Tricks https://www.nexusmods.com/pathfinderkingmaker/mods/26, which is under the MIT License
 
+using DG.Tweening;
 using HarmonyLib;
-using JetBrains.Annotations;
 using Kingmaker;
-using Kingmaker.Blueprints.Items;
-using Kingmaker.EntitySystem.Entities;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Root;
 using Kingmaker.GameModes;
-using Kingmaker.Items;
-using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.UnitLogic.Buffs;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
-using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.UnitLogic.Parts;
+using Kingmaker.Settings;
 using Kingmaker.View;
+using ModKit;
+using Owlcat.Runtime.Visual.RenderPipeline;
+using Owlcat.Runtime.Visual.RenderPipeline.RendererFeatures.OccludedObjectHighlighting;
 using System;
 using System.Linq;
 using UnityEngine;
-using UnityModManager = UnityModManagerNet.UnityModManager;
-using Kingmaker.Settings;
-using Kingmaker.Settings.Difficulty;
-using ModKit;
-using Kingmaker.Blueprints.Items.Ecnchantments;
-using Kingmaker.Utility;
-using System.Collections.Generic;
 using CameraMode = Kingmaker.View.CameraMode;
-using DG.Tweening;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Root;
-using Owlcat.Runtime.Visual.RenderPipeline;
-using Owlcat.Runtime.Visual.RenderPipeline.RendererFeatures.OccludedObjectHighlighting;
-using Kingmaker.Blueprints.Area;
 
 namespace ToyBox.BagOfPatches {
     internal static class CameraPatches {

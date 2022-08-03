@@ -1,12 +1,9 @@
 ﻿using Kingmaker;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Items.Armors;
 using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.Blueprints.Items.Weapons;
-using Kingmaker.Blueprints.Items.Shields;
 using Kingmaker.Designers.Mechanics.Facts;
-using Kingmaker.EntitySystem.Persistence.JsonUtility;
 using Kingmaker.Items;
 using Kingmaker.UI.Common;
 using Kingmaker.UnitLogic.Mechanics;
@@ -87,8 +84,8 @@ namespace ToyBox.classes.MainUI {
                         index => { selectedItemIndex = index; UpdateItems(); },
                         UI.buttonStyle,
                         UI.Width(175));
-                        UI.Space(25);
-                        if (UI.VPicker("Ench. Types".cyan(), ref collationKey, collationKeys, "All", (s) => s, ref collationSearchText, UI.Width(175))) {
+                    UI.Space(25);
+                    if (UI.VPicker("Ench. Types".cyan(), ref collationKey, collationKeys, "All", (s) => s, ref collationSearchText, UI.Width(175))) {
                         Mod.Debug($"collationKey: {collationKey}");
                         UpdateCollation();
                     }
@@ -300,11 +297,11 @@ namespace ToyBox.classes.MainUI {
         public static void EnchantmentsListGUI() {
             UI.Div(5);
             var enchantement = selectedCollatedEnchantments ?? filteredEnchantments;
-            
+
             for (var i = 0; i < enchantement.Count; i++) {
                 var enchant = enchantement[i];
                 var title = enchant.name.Rarity(enchant.Rarity());
-               
+
                 using (UI.HorizontalScope()) {
                     UI.Space(5);
                     UI.Label(title, UI.Width(400));
@@ -356,7 +353,7 @@ namespace ToyBox.classes.MainUI {
                                 GUILayout.TextField(enchant.AssetGuid.ToString(), UI.AutoWidth());
                             }
                             UI.Label(description);
-                            
+
                         }
                     }
                     else {
@@ -400,7 +397,7 @@ namespace ToyBox.classes.MainUI {
                     var displayName = enchant.GetDisplayName();
                     var description = enchant.Description ?? "";
                     description = description.StripHTML();
-                    if (terms.All(term => name.Matches( term))
+                    if (terms.All(term => name.Matches(term))
                         || terms.All(term => displayName.Matches(term))
                         || settings.searchesDescriptions && terms.All(term => description.Matches(term))
                         ) {

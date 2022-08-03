@@ -1,12 +1,11 @@
 ﻿// Copyright < 2021 > Narria(github user Cabarius) - License: MIT
-using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Kingmaker.Blueprints;
 using Kingmaker.BundlesLoading;
 using ModKit;
-using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace ToyBox {
 

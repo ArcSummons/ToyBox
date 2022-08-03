@@ -1,16 +1,21 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using UnityEngine;
 using System;
+using UnityEngine;
 using GL = UnityEngine.GUILayout;
 
-namespace ModKit {
-    public static partial class UI {
+namespace ModKit
+{
+    public static partial class UI
+    {
         private static GUIStyle linkStyle = null;
 
-        public static bool LinkButton(string title, string url, Action action = null, params GUILayoutOption[] options) {
+        public static bool LinkButton(string title, string url, Action action = null, params GUILayoutOption[] options)
+        {
             if (options.Length == 0) { options = new GUILayoutOption[] { AutoWidth() }; }
-            if (linkStyle == null) {
-                linkStyle = new GUIStyle(GUI.skin.toggle) {
+            if (linkStyle == null)
+            {
+                linkStyle = new GUIStyle(GUI.skin.toggle)
+                {
                     wordWrap = false
                 };
                 //linkStyle.normal.background = RarityTexture;
@@ -25,13 +30,15 @@ namespace ModKit {
             }
             bool result;
             Rect rect;
-            using (HorizontalScope()) {
+            using (HorizontalScope())
+            {
                 Space(4.point());
                 result = GL.Button(title, linkStyle, options);
                 rect = GUILayoutUtility.GetLastRect();
             }
-            Div(linkStyle.normal.textColor, 0 , 0, rect.width + 4.point());
-            if (result) {
+            Div(linkStyle.normal.textColor, 0, 0, rect.width + 4.point());
+            if (result)
+            {
                 Application.OpenURL(url);
                 action?.Invoke();
             }

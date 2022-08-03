@@ -1,13 +1,8 @@
-﻿using System;
-using System.Linq;
-using UnityEngine;
-using Kingmaker;
-using Kingmaker.EntitySystem.Entities;
-using ModKit;
-using ToyBox.Multiclass;
-using static ModKit.UI;
-using Kingmaker.View.MapObjects;
+﻿using Kingmaker;
 using Kingmaker.View.MapObjects.InteractionRestrictions;
+using ModKit;
+using System.Linq;
+using static ModKit.UI;
 
 namespace ToyBox {
     public class PhatLoot {
@@ -147,7 +142,7 @@ namespace ToyBox {
                             foreach (var present in presents) {
                                 var pahtLewts = present.GetLewtz(searchText).Lootable(rarity).OrderByDescending(l => l.Rarity());
                                 var unit = present.Unit;
-                                if (pahtLewts.Count() > 0 && (unit == null || (settings.toggleLootChecklistFilterFriendlies && !unit.IsPlayersEnemy || unit.IsPlayersEnemy) || (!settings.toggleLootChecklistFilterFriendlies && unit.IsPlayersEnemy))) { 
+                                if (pahtLewts.Count() > 0 && (unit == null || (settings.toggleLootChecklistFilterFriendlies && !unit.IsPlayersEnemy || unit.IsPlayersEnemy) || (!settings.toggleLootChecklistFilterFriendlies && unit.IsPlayersEnemy))) {
                                     isEmpty = false;
                                     UI.Div();
                                     using (UI.HorizontalScope()) {

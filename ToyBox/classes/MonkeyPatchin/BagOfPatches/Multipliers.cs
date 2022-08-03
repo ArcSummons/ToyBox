@@ -4,30 +4,23 @@ using HarmonyLib;
 using JetBrains.Annotations;
 using Kingmaker;
 using Kingmaker.Blueprints.Items;
+using Kingmaker.Blueprints.Items.Ecnchantments;
 using Kingmaker.EntitySystem.Entities;
-using Kingmaker.GameModes;
 using Kingmaker.Items;
+using Kingmaker.Settings;
+using Kingmaker.Settings.Difficulty;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities;
 using Kingmaker.UnitLogic.Buffs;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
 using Kingmaker.UnitLogic.Parts;
-using Kingmaker.View;
+using Kingmaker.Utility;
+using ModKit;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityModManager = UnityModManagerNet.UnityModManager;
-using Kingmaker.Settings;
-using Kingmaker.Settings.Difficulty;
-using ModKit;
-using Kingmaker.Blueprints.Items.Ecnchantments;
-using Kingmaker.Utility;
-using System.Collections.Generic;
-using CameraMode = Kingmaker.View.CameraMode;
-using DG.Tweening;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Root;
 
 namespace ToyBox.BagOfPatches {
     internal static class Multipliers {

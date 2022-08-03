@@ -1,23 +1,22 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using HarmonyLib;
+using Kingmaker.AreaLogic.Etudes;
 using Kingmaker.Blueprints;
 using Kingmaker.Blueprints.Area;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Classes.Spells;
-using Kingmaker.Craft;
 using Kingmaker.Blueprints.Facts;
-using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Buffs.Blueprints;
-using System.Runtime.CompilerServices;
-using ModKit;
-using Kingmaker.Blueprints.Items.Weapons;
-using HarmonyLib;
-using Kingmaker.AreaLogic.Etudes;
 using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Items.Ecnchantments;
+using Kingmaker.Craft;
+using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.Buffs.Blueprints;
+using ModKit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace ToyBox {
 
@@ -53,7 +52,7 @@ namespace ToyBox {
             if (badList.Contains(bp.AssetGuid)) return modifers;
             var traverse = Traverse.Create(bp);
             foreach (var property in Traverse.Create(bp).Properties()) {
-                    if (property.StartsWith("Is")) {
+                if (property.StartsWith("Is")) {
                     try {
                         var value = traverse.Property<bool>(property)?.Value;
                         if (value.HasValue && value.GetValueOrDefault()) {

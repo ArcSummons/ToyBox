@@ -1,19 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Kingmaker.Blueprints.Items;
-using UnityEngine;
-using Kingmaker.Items;
+﻿using Kingmaker;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Items.Weapons;
-using Kingmaker.Blueprints.Items.Equipment;
-using Kingmaker.Blueprints.Items.Components;
-using ModKit;
-using ToyBox;
-using Kingmaker.Blueprints.Items.Ecnchantments;
+using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Items.Armors;
-using Kingmaker.UI.Common;
-using Kingmaker;
+using Kingmaker.Blueprints.Items.Components;
+using Kingmaker.Blueprints.Items.Ecnchantments;
+using Kingmaker.Blueprints.Items.Equipment;
+using Kingmaker.Blueprints.Items.Weapons;
+using Kingmaker.Items;
+using ModKit;
+using System;
+using System.Linq;
+using ToyBox;
+using UnityEngine;
 
 namespace ToyBox {
     public enum RarityType {

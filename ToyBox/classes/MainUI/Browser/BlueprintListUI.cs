@@ -1,18 +1,18 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using UnityEngine;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Kingmaker;
 using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes.Selection;
+using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Items.Weapons;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.RuleSystem;
 using Kingmaker.Utility;
 using ModKit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 using static ModKit.UI;
-using Kingmaker.Blueprints.Classes.Selection;
-using Kingmaker.Blueprints.Items;
 
 namespace ToyBox {
     public class BlueprintListUI {

@@ -17,7 +17,6 @@ using Kingmaker.Designers;
 using Kingmaker.Designers.EventConditionActionSystem.ContextData;
 using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem.Entities;
-using Kingmaker.EntitySystem.Persistence;
 using Kingmaker.Globalmap.Blueprints;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
@@ -104,7 +103,7 @@ namespace ToyBox {
         public static IEnumerable<BlueprintAction> GetActions(this SimpleBlueprint bp) => BlueprintAction.ActionsForBlueprint(bp);
         private static Dictionary<BlueprintParametrizedFeature, IFeatureSelectionItem[]> parametrizedSelectionItems = new();
         public static IFeatureSelectionItem ParametrizedSelectionItems(this BlueprintParametrizedFeature feature, int index) {
-            if (parametrizedSelectionItems.TryGetValue(feature, out var value)) return index < value.Length ? value[index] : null ;
+            if (parametrizedSelectionItems.TryGetValue(feature, out var value)) return index < value.Length ? value[index] : null;
             value = feature.Items.OrderBy(x => x.Name).ToArray();
             if (value == null) return null;
             parametrizedSelectionItems[feature] = value;
@@ -404,10 +403,10 @@ namespace ToyBox {
 
             //Army
             BlueprintAction.Register<BlueprintArmyPreset>("Create Friendly", (bp, ch, n, l) => {
-                Actions.CreateArmy(bp,true);
+                Actions.CreateArmy(bp, true);
             });
             BlueprintAction.Register<BlueprintArmyPreset>("Create Hostile", (bp, ch, n, l) => {
-                Actions.CreateArmy(bp,false);
+                Actions.CreateArmy(bp, false);
             });
 
             //ArmyGeneral

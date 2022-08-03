@@ -1,24 +1,23 @@
-﻿using System;
+﻿using Kingmaker;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Classes;
+using Kingmaker.Blueprints.Classes.Prerequisites;
+using Kingmaker.Blueprints.Items.Components;
+using Kingmaker.EntitySystem.Entities;
+using Kingmaker.Kingdom.Settlements;
+using Kingmaker.Kingdom.Settlements.BuildingComponents;
+//using Kingmaker.UI.LevelUp.Phase;
+using Kingmaker.UnitLogic;
+using Kingmaker.UnitLogic.ActivatableAbilities.Restrictions;
+using Kingmaker.UnitLogic.Class.LevelUp;
+using Kingmaker.Utility;
+using ModKit;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Kingmaker;
-using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.Blueprints.Items.Components;
-using Kingmaker.EntitySystem.Entities;
-//using Kingmaker.UI.LevelUp.Phase;
-using Kingmaker.UnitLogic;
-using Kingmaker.UnitLogic.Class.LevelUp;
-using Kingmaker.Utility;
 using UnityEngine.SceneManagement;
 using static ModKit.Utility.ReflectionCache;
-using UnityModManager = UnityModManagerNet.UnityModManager;
-using ModKit;
-using Kingmaker.UnitLogic.ActivatableAbilities.Restrictions;
-using Kingmaker.Kingdom.Settlements;
-using Kingmaker.Blueprints.Classes.Prerequisites;
-using Kingmaker.Kingdom.Settlements.BuildingComponents;
 
 namespace ToyBox.Multiclass {
     public enum ProgressionPolicy {
@@ -150,7 +149,7 @@ namespace ToyBox.Multiclass {
             set => settings.toggleMulticlass = value;
         }
         #region Utilities
-        
+
         private static void ForEachAppliedMulticlass(LevelUpState state, UnitDescriptor unit, Action action) {
             var options = MulticlassOptions.Get(state.IsCharGen() ? null : unit);
             var selectedClass = state.SelectedClass;
@@ -159,7 +158,7 @@ namespace ToyBox.Multiclass {
             Mod.Trace($"    mythic: {state.IsMythicClassSelected}");
             Mod.Trace($"    options: {options}");
             foreach (var characterClass in Main.multiclassMod.AllClasses) {
-                if (characterClass != stateReplacer.SelectedClass 
+                if (characterClass != stateReplacer.SelectedClass
                     //&& characterClass.IsMythic == selectedClass.IsMythic 
                     && options.Contains(characterClass)) {
                     var classes = unit?.Progression.Classes;

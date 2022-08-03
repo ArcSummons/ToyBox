@@ -7,16 +7,12 @@ using Kingmaker.Blueprints.Root;
 using Kingmaker.Globalmap.State;
 using Kingmaker.Globalmap.View;
 using Kingmaker.Kingdom;
-using Kingmaker.Kingdom.Blueprints;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
-using Kingmaker.Kingdom.Armies;
 using ModKit;
-using static ModKit.UI;
-using ModKit.Utility;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 using UnityModManagerNet;
+using static ModKit.UI;
 
 namespace ToyBox.classes.MainUI {
     public static class ArmiesEditor {
@@ -97,7 +93,7 @@ namespace ToyBox.classes.MainUI {
                 UpdateArmies();
             if (playerArmies != null)
                 ArmiesGUI("Player Armies", playerArmies);
-            if (playerArmies != null && demonArmies != null) 
+            if (playerArmies != null && demonArmies != null)
                 Div(0, 25, 0);
             if (demonArmies != null)
                 ArmiesGUI("Demon Armies", demonArmies);
@@ -310,7 +306,7 @@ namespace ToyBox.classes.MainUI {
                                                 toggleShowSquadStates[squads] = showAddSquad;
                                             }
                                         }
-                                        if(showAddSquad) {
+                                        if (showAddSquad) {
                                             Div(0, 10);
                                             var count = 0;
                                             var kingdom = KingdomState.Instance;
@@ -319,9 +315,9 @@ namespace ToyBox.classes.MainUI {
                                             var recruitManager = kingdom.RecruitsManager;
                                             var growthPool = recruitManager.Growth;
                                             using (VerticalScope()) {
-                                                using (HorizontalScope()) { 
-                                                Label("Unit Count".cyan(), AutoWidth());
-                                                count = IntTextField(ref settings.unitCount, null, Width(150));
+                                                using (HorizontalScope()) {
+                                                    Label("Unit Count".cyan(), AutoWidth());
+                                                    count = IntTextField(ref settings.unitCount, null, Width(150));
                                                 }
 
                                                 foreach (var poolInfo in mercenariesPool) {
@@ -347,8 +343,8 @@ namespace ToyBox.classes.MainUI {
                                             }
                                             if (squadToAdd != null) {
                                                 var merge = false;
-                                                foreach(var squad in army.Data.Squads) {
-                                                    if(squad.Unit.NameSafe() == squadToAdd.NameSafe()) {
+                                                foreach (var squad in army.Data.Squads) {
+                                                    if (squad.Unit.NameSafe() == squadToAdd.NameSafe()) {
                                                         merge = true;
                                                         break;
                                                     }
@@ -356,7 +352,7 @@ namespace ToyBox.classes.MainUI {
                                                 army.Data.Add(squadToAdd, count, merge, null);
                                             }
                                         }
-                                       
+
                                         if (squadToRemove != null) {
                                             squadToRemove.Army.RemoveSquad(squadToRemove);
                                         }
@@ -377,7 +373,7 @@ namespace ToyBox.classes.MainUI {
             }
         }
 
-       
+
 
         public static GlobalMapState MainGlobalMapState() {
             var player = Game.Instance?.Player ?? null;

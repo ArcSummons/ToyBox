@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 
-namespace ModKit {
+namespace ModKit
+{
     // https://docs.unity3d.com/Manual/StyledText.html
-    public enum RGBA : uint {
+    public enum RGBA : uint
+    {
         aqua = 0x00ffffff,
         blue = 0x8080ffff,
         brown = 0xC09050ff, //0xa52a2aff,
@@ -48,8 +50,10 @@ namespace ModKit {
 
 
 
-    public static class ColorUtils {
-        public static Color color(this RGBA rga, float adjust = 0) {
+    public static class ColorUtils
+    {
+        public static Color color(this RGBA rga, float adjust = 0)
+        {
             var red = (float)((long)rga >> 24) / 256f;
             var green = (float)(0xFF & ((long)rga >> 16)) / 256f;
             var blue = (float)(0xFF & ((long)rga >> 8)) / 256f;

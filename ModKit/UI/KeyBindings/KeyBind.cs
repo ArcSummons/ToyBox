@@ -1,17 +1,21 @@
-﻿using UnityEngine;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using UnityEngine;
 
-namespace ModKit {
-    public static partial class UI {
-        public enum ClickModifier {
+namespace ModKit
+{
+    public static partial class UI
+    {
+        public enum ClickModifier
+        {
             Disabled,
             Shift,
             Ctrl,
             Alt,
             Command
         }
-        public static bool IsActive(this ClickModifier modifier) => modifier switch {
+        public static bool IsActive(this ClickModifier modifier) => modifier switch
+        {
             ClickModifier.Disabled => false,
             ClickModifier.Shift => Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift),
             ClickModifier.Ctrl => Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl),
@@ -21,7 +25,8 @@ namespace ModKit {
         };
 
         private static readonly HashSet<KeyCode> allowedMouseButtons = new() { KeyCode.Mouse3, KeyCode.Mouse4, KeyCode.Mouse5, KeyCode.Mouse6 };
-        public static bool IsModifier(this KeyCode code) {
+        public static bool IsModifier(this KeyCode code)
+        {
             return code == KeyCode.LeftControl || code == KeyCode.RightControl
                        || code == KeyCode.LeftAlt || code == KeyCode.RightAlt
                        || code == KeyCode.LeftShift || code == KeyCode.RightShift
@@ -36,10 +41,13 @@ namespace ModKit {
         public static bool IsShift(this KeyCode code) => code == KeyCode.LeftShift || code == KeyCode.RightShift;
 
         private static GUIStyle _hotkeyStyle;
-        public static GUIStyle hotkeyStyle {
-            get {
+        public static GUIStyle hotkeyStyle
+        {
+            get
+            {
                 if (_hotkeyStyle == null)
-                    _hotkeyStyle = new GUIStyle(GUI.skin.textArea) {
+                    _hotkeyStyle = new GUIStyle(GUI.skin.textArea)
+                    {
                         margin = new RectOffset(3, 3, 3, 3),
                         richText = true
                     };
@@ -50,7 +58,8 @@ namespace ModKit {
             }
         }
         [JsonObject(MemberSerialization.OptIn)]
-        public class KeyBind {
+        public class KeyBind
+        {
             [JsonProperty]
             public string ID;
             [JsonProperty]
@@ -63,7 +72,8 @@ namespace ModKit {
             public bool Cmd;
             [JsonProperty]
             public bool Shift;
-            public KeyBind(string identifer, KeyCode key = KeyCode.None, bool ctrl = false, bool alt = false, bool cmd = false, bool shift = false) {
+            public KeyBind(string identifer, KeyCode key = KeyCode.None, bool ctrl = false, bool alt = false, bool cmd = false, bool shift = false)
+            {
                 ID = identifer;
                 Key = key;
                 Ctrl = ctrl;
@@ -71,7 +81,8 @@ namespace ModKit {
                 Cmd = cmd;
                 Shift = shift;
             }
-            public bool Conflicts(KeyBind kb) {
+            public bool Conflicts(KeyBind kb)
+            {
                 return Key == kb.Key
                     && Ctrl == kb.Ctrl
                     && Alt == kb.Alt
@@ -79,14 +90,17 @@ namespace ModKit {
                     && Shift == kb.Shift;
 
             }
-            public override bool Equals(object o) {
-                if (o is KeyBind kb) {
+            public override bool Equals(object o)
+            {
+                if (o is KeyBind kb)
+                {
                     return ID == kb.ID && Conflicts(kb);
                 }
                 else
                     return false;
             }
-            public override int GetHashCode() {
+            public override int GetHashCode()
+            {
                 return ID.GetHashCode()
                     + (int)Key
                     + (Ctrl ? 1 : 0)
@@ -96,12 +110,16 @@ namespace ModKit {
             [JsonIgnore]
             public bool IsEmpty => Key == KeyCode.None;
             [JsonIgnore]
-            public bool IsKeyCodeActive {
-                get {
-                    if (Key == KeyCode.None) {
+            public bool IsKeyCodeActive
+            {
+                get
+                {
+                    if (Key == KeyCode.None)
+                    {
                         return false;
                     }
-                    if (allowedMouseButtons.Contains(Key)) {
+                    if (allowedMouseButtons.Contains(Key))
+                    {
                         return Input.GetKey(Key);
                     }
                     var active = Key == Event.current.keyCode;
@@ -109,12 +127,16 @@ namespace ModKit {
                 }
             }
             [JsonIgnore]
-            public bool IsActive {
-                get {
-                    if (Event.current == null) {
+            public bool IsActive
+            {
+                get
+                {
+                    if (Event.current == null)
+                    {
                         return false;
                     }
-                    if (!IsKeyCodeActive) {
+                    if (!IsKeyCodeActive)
+                    {
                         return false;
                     }
                     var ctrlDown = Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl);
@@ -129,16 +151,20 @@ namespace ModKit {
                     return active;
                 }
             }
-            public bool IsModifierActive {
-                get {
-                    if (Event.current == null) {
+            public bool IsModifierActive
+            {
+                get
+                {
+                    if (Event.current == null)
+                    {
                         return false;
                     }
                     return Input.GetKey(Key);
                 }
             }
             public string bindCode => ToString();
-            public override string ToString() { // Why can't Unity display these ⌥⌃⇧⌘ ???  ⌗⌃⌥⇧⇑⌂©ăåâÂ
+            public override string ToString()
+            { // Why can't Unity display these ⌥⌃⇧⌘ ???  ⌗⌃⌥⇧⇑⌂©ăåâÂ
                 var result = "";
                 if (Ctrl)
                     result += "^".cyan();

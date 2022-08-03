@@ -1,13 +1,8 @@
-﻿using Kingmaker;
-using ModKit;
-using static ModKit.UI;
-using Kingmaker.Kingdom;
-using Kingmaker.Kingdom.Tasks;
+﻿using Kingmaker.Kingdom;
 using Kingmaker.Kingdom.Blueprints;
-using Kingmaker.Blueprints;
-using System.Collections.Generic;
+using ModKit;
 using System.Linq;
-using UnityEngine;
+using static ModKit.UI;
 
 namespace ToyBox.classes.MainUI {
     public static class EventEditor {
@@ -55,49 +50,49 @@ namespace ToyBox.classes.MainUI {
                 //TODO: toggle to ignore specific restrictions
                 () => Toggle("No Decree Resource Costs", ref settings.toggleTaskNoResourcesCost),
                 () => {
-                     using (VerticalScope()) {
-                         
-                         if (ks.ActiveTasks.Count() == 0)
-                            Label("No active decrees".orange().bold());
-                         foreach (var activeTask in ks.ActiveEvents) {
-                             if (activeTask.AssociatedTask != null) {
-                                 Div(0,25);
-                                 var task = activeTask.AssociatedTask;
-                                 using (HorizontalScope()) {
-                                    Label(task.Name.cyan(), 350.width());
-                                     25.space();
-                                     if (task.IsInProgress)
-                                        Label($"Ends in {task.EndsOn - ks.CurrentDay} days", 200.width());
-                                     else {
-                                        ActionButton("Start", () => {
-                                             task.Start();
-                                         }, 200.width());
-                                     }
-                                     25.space();
+                    using (VerticalScope()) {
 
-                                     if (task.IsInProgress) {
+                        if (ks.ActiveTasks.Count() == 0)
+                            Label("No active decrees".orange().bold());
+                        foreach (var activeTask in ks.ActiveEvents) {
+                            if (activeTask.AssociatedTask != null) {
+                                Div(0, 25);
+                                var task = activeTask.AssociatedTask;
+                                using (HorizontalScope()) {
+                                    Label(task.Name.cyan(), 350.width());
+                                    25.space();
+                                    if (task.IsInProgress)
+                                        Label($"Ends in {task.EndsOn - ks.CurrentDay} days", 200.width());
+                                    else {
+                                        ActionButton("Start", () => {
+                                            task.Start();
+                                        }, 200.width());
+                                    }
+                                    25.space();
+
+                                    if (task.IsInProgress) {
                                         ActionButton("Finish", () => {
-                                             task.m_BonusDays = task.Duration;
-                                         }, 120.width());
-                                         if (task.CanCancelStarted) {
+                                            task.m_BonusDays = task.Duration;
+                                        }, 120.width());
+                                        if (task.CanCancelStarted) {
                                             ActionButton("Cancel", () => {
-                                                 task.Cancel();
-                                             }, 120.width());
-                                         }
-                                         else
-                                             123.space();
-                                     }
-                                     else
-                                         249.space();
-                                     25.space();
-                                     var taskBlueprint = task.Event.EventBlueprint as BlueprintKingdomProject;
+                                                task.Cancel();
+                                            }, 120.width());
+                                        }
+                                        else
+                                            123.space();
+                                    }
+                                    else
+                                        249.space();
+                                    25.space();
+                                    var taskBlueprint = task.Event.EventBlueprint as BlueprintKingdomProject;
                                     Label(task.Description.StripHTML().orange() + "\n" + taskBlueprint.MechanicalDescription.ToString().StripHTML().green());
-                                 }
-                             }
-                         }
-                         ks.TimelineManager.UpdateEvents();
-                     }
-                 }
+                                }
+                            }
+                        }
+                        ks.TimelineManager.UpdateEvents();
+                    }
+                }
              );
 
         }

@@ -1,7 +1,4 @@
-﻿using HarmonyLib;
-using Kingmaker.UnitLogic;
-
-namespace ToyBox.BagOfPatches {
+﻿namespace ToyBox.BagOfPatches {
     internal static class Spellbooks {
         public static Settings settings = Main.settings;
 

@@ -1,9 +1,6 @@
-﻿using ModKit;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ToyBox {
     // This class encapsulates the ability to show GUI for displaying and or editing an object.  Not all editors will actually modify values but they will be included here to keep things simple

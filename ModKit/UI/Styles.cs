@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using UnityModManagerNet;
 
-namespace ModKit {
-    public static partial class UI {
+namespace ModKit
+{
+    public static partial class UI
+    {
 
         private static Texture2D fillTexture = null;
         private static GUIStyle fillStyle = null;
         private static Color fillColor = new(1f, 1f, 1f, 0.65f);
         public static int point(this int x) => UnityModManager.UI.Scale(x);
 
-        public static GUIStyle FillStyle(Color color) {
+        public static GUIStyle FillStyle(Color color)
+        {
             if (fillTexture == null)
                 fillTexture = new Texture2D(1, 1);
             if (fillStyle == null)
@@ -21,8 +24,10 @@ namespace ModKit {
         }
 
         private static GUIStyle _buttonStyle;
-        public static GUIStyle buttonStyle {
-            get {
+        public static GUIStyle buttonStyle
+        {
+            get
+            {
                 if (_buttonStyle == null)
                     _buttonStyle = new GUIStyle(GUI.skin.button) { alignment = TextAnchor.MiddleLeft };
                 return _buttonStyle;
@@ -30,10 +35,13 @@ namespace ModKit {
         }
 
         private static GUIStyle _largeStyle;
-        public static GUIStyle largeStyle {
-            get {
+        public static GUIStyle largeStyle
+        {
+            get
+            {
                 if (_largeStyle == null)
-                    _largeStyle = new GUIStyle(GUI.skin.box) {
+                    _largeStyle = new GUIStyle(GUI.skin.box)
+                    {
                         richText = true
                     };
                 _largeStyle.fixedHeight = 24.point();
@@ -50,10 +58,13 @@ namespace ModKit {
             }
         }
         private static GUIStyle _textBoxStyle;
-        public static GUIStyle textBoxStyle {
-            get {
+        public static GUIStyle textBoxStyle
+        {
+            get
+            {
                 if (_textBoxStyle == null)
-                    _textBoxStyle = new GUIStyle(GUI.skin.box) {
+                    _textBoxStyle = new GUIStyle(GUI.skin.box)
+                    {
                         richText = true
                     };
                 _textBoxStyle.fontSize = 14.point();
@@ -70,29 +81,35 @@ namespace ModKit {
         }
 
         private static GUIStyle _toggleStyle;
-        public static GUIStyle toggleStyle {
-            get {
+        public static GUIStyle toggleStyle
+        {
+            get
+            {
                 if (_toggleStyle == null)
                     _toggleStyle = new GUIStyle(GUI.skin.label) { alignment = TextAnchor.MiddleLeft };
                 return _toggleStyle;
             }
         }
         public static GUIStyle divStyle;
-        public static void Div(Color color, float indent = 0, float height = 0, float width = 0) {
+        public static void Div(Color color, float indent = 0, float height = 0, float width = 0)
+        {
             if (fillTexture == null)
                 fillTexture = new Texture2D(1, 1);
             //if (divStyle == null) {
-            divStyle = new GUIStyle {
+            divStyle = new GUIStyle
+            {
                 fixedHeight = 1,
             };
             //}
             fillTexture.SetPixel(0, 0, color);
             fillTexture.Apply();
             divStyle.normal.background = fillTexture;
-            if (divStyle.margin == null) {
+            if (divStyle.margin == null)
+            {
                 divStyle.margin = new RectOffset((int)indent, 0, 4, 4);
             }
-            else {
+            else
+            {
                 divStyle.margin.left = (int)indent + 3;
             }
             if (width > 0)
@@ -105,8 +122,10 @@ namespace ModKit {
         }
 
         private static Texture2D _rarityTexture = null;
-        public static Texture2D RarityTexture {
-            get {
+        public static Texture2D RarityTexture
+        {
+            get
+            {
                 if (_rarityTexture == null)
                     _rarityTexture = new Texture2D(1, 1);
                 _rarityTexture.SetPixel(0, 0, RGBA.black.color());
@@ -115,9 +134,12 @@ namespace ModKit {
             }
         }
         private static GUIStyle _rarityStyle;
-        public static GUIStyle rarityStyle {
-            get {
-                if (_rarityStyle == null) {
+        public static GUIStyle rarityStyle
+        {
+            get
+            {
+                if (_rarityStyle == null)
+                {
                     _rarityStyle = new GUIStyle(GUI.skin.button);
                     _rarityStyle.normal.background = RarityTexture;
                 }
@@ -125,10 +147,14 @@ namespace ModKit {
             }
         }
         private static GUIStyle _rarityButtonStyle;
-        public static GUIStyle rarityButtonStyle {
-            get {
-                if (_rarityButtonStyle == null) {
-                    _rarityButtonStyle = new GUIStyle(GUI.skin.button) {
+        public static GUIStyle rarityButtonStyle
+        {
+            get
+            {
+                if (_rarityButtonStyle == null)
+                {
+                    _rarityButtonStyle = new GUIStyle(GUI.skin.button)
+                    {
                         alignment = TextAnchor.MiddleLeft
                     };
                     _rarityButtonStyle.normal.background = RarityTexture;

@@ -1,20 +1,14 @@
 // Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using ModKit.Utility;
-using System.Collections.Generic;
-using UnityModManagerNet;
-using UnityEngine;
-using ModKit;
-using System.Collections;
-using System.Linq;
-using Newtonsoft.Json;
-using Kingmaker.EntitySystem;
 using Kingmaker;
-using Kingmaker.Armies.TacticalCombat.Parts;
-using Kingmaker.UnitLogic.Parts;
-using JetBrains.Annotations;
+using Kingmaker.EntitySystem;
 using Kingmaker.EntitySystem.Persistence;
-using Kingmaker.PubSubSystem;
+using ModKit;
+using ModKit.Utility;
+using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityModManagerNet;
 
 namespace ToyBox {
     public class PerSaveSettings : EntityPart {
@@ -60,7 +54,7 @@ namespace ToyBox {
             if (cachedPerSave == null) {
                 Mod.Warn("per save settings not found, creating new...");
                 cachedPerSave = new PerSaveSettings {
-                };   
+                };
                 SavePerSaveSettings();
             }
         }
@@ -92,7 +86,7 @@ namespace ToyBox {
                 Mod.Error(e);
             }
         }
-        public PerSaveSettings perSave{
+        public PerSaveSettings perSave {
             get {
                 if (cachedPerSave != null) return cachedPerSave;
                 ReloadPerSaveSettings();

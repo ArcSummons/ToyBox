@@ -1,10 +1,9 @@
-﻿using System;
-using System.Linq;
-using Kingmaker;
+﻿using Kingmaker;
 using Kingmaker.EntitySystem.Entities;
 using ModKit;
+using System;
+using System.Linq;
 using static ModKit.UI;
-using ToyBox.Multiclass;
 
 namespace ToyBox {
     public class LevelUp {
@@ -102,7 +101,7 @@ namespace ToyBox {
                 () => { UI.Toggle("Ignore Feat Prerequisites When Choosing A Class", ref settings.toggleIgnoreFeaturePrerequisitesWhenChoosingClass); },
                 () => { UI.Toggle("Ignore Feat Prerequisits (List) When Choosing A Class", ref settings.toggle); },
 #endif
-                () => Toggle("Remove Level 20 Caster Level Cap", ref settings.toggleUncappedCasterLevel), 
+                () => Toggle("Remove Level 20 Caster Level Cap", ref settings.toggleUncappedCasterLevel),
                 () => Toggle("Party Level Cap 40 (continuous growth after 20)", ref settings.toggleContinousLevelCap),
                 () => Toggle("Party Level Cap 24 (exponential growth)", ref settings.toggleExponentialLevelCap),
 

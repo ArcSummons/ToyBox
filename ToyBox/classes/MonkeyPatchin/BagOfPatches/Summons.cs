@@ -6,28 +6,24 @@ using Kingmaker.AreaLogic.SummonPool;
 using Kingmaker.Blueprints;
 //using Kingmaker.Controllers.GlobalMap;
 using Kingmaker.EntitySystem.Entities;
+using Kingmaker.EntitySystem.Persistence;
 using Kingmaker.RuleSystem.Rules;
+//using Kingmaker.UI._ConsoleUI.GroupChanger;
+using Kingmaker.UI.ActionBar;
+using Kingmaker.UI.Common;
+using Kingmaker.UI.MVVM._VM.ActionBar;
+using Kingmaker.UI.UnitSettings;
+using Kingmaker.UnitLogic.Abilities.Blueprints;
 //using Kingmaker.UI._ConsoleUI.Models;
 //using Kingmaker.UI.RestCamp;
 using Kingmaker.UnitLogic.Parts;
 using Kingmaker.Utility;
-using System;
-//using Kingmaker.UI._ConsoleUI.GroupChanger;
-using Kingmaker.UI.ActionBar;
-using TurnBased.Controllers;
-using UnityEngine;
-using UnityModManager = UnityModManagerNet.UnityModManager;
 using ModKit;
-using Kingmaker.View;
-using Kingmaker.UI.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Kingmaker.UI.MVVM._VM.ActionBar;
-using Kingmaker.UI.UnitSettings;
-using Kingmaker.UnitLogic.Abilities;
-using Kingmaker.EntitySystem.Persistence;
-using static Kingmaker.Visual.Animation.Kingmaker.Actions.UnitAnimationActionHandEquip;
-using Kingmaker.UnitLogic.Abilities.Blueprints;
+using TurnBased.Controllers;
+using UnityEngine;
 
 namespace ToyBox.BagOfPatches {
     internal static class Summons {
@@ -63,7 +59,7 @@ namespace ToyBox.BagOfPatches {
                     try {
                         __result.AddRange(Game.Instance.Player.Group.Select(u => u).Where(u => u.IsSummoned()));
                     }
-                    catch {}
+                    catch { }
                 }
             }
         }

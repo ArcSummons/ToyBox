@@ -1,5 +1,4 @@
 ﻿using Kingmaker;
-using Kingmaker.Blueprints.Loot;
 using Kingmaker.Designers.EventConditionActionSystem.Actions;
 using Kingmaker.ElementsSystem;
 using Kingmaker.EntitySystem;
@@ -8,18 +7,13 @@ using Kingmaker.EntitySystem.Stats;
 using Kingmaker.Items;
 using Kingmaker.UI.MVVM._PCView.Loot;
 using Kingmaker.UI.MVVM._VM.Loot;
-using Kingmaker.UnitLogic;
 using Kingmaker.Utility;
 using Kingmaker.View.MapObjects;
-using Newtonsoft.Json;
 using Owlcat.Runtime.Core.Utils;
 using Owlcat.Runtime.UI.Controls.Button;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 namespace ToyBox {
@@ -124,8 +118,8 @@ namespace ToyBox {
             lootPCView = Game.Instance.UI.Canvas.transform.Find("LootPCView").GetComponent<LootPCView>();
             lootPCView.Initialize();
             var buttons = lootPCView.transform.Find("Window/Inventory/Button").GetComponentsInChildren<OwlcatButton>();
-            if(buttons.Length > 2) {
-                for(int i = 2; i < buttons.Length; i++) {
+            if (buttons.Length > 2) {
+                for (int i = 2; i < buttons.Length; i++) {
                     GameObject.DestroyImmediate(buttons[i].gameObject);
                 }
             }

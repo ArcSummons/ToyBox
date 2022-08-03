@@ -1,11 +1,14 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ModKit.Utility {
-    public class GUISubScope : IDisposable {
+namespace ModKit.Utility
+{
+    public class GUISubScope : IDisposable
+    {
         public GUISubScope() : this(null) { }
 
-        public GUISubScope(string subtitle) {
+        public GUISubScope(string subtitle)
+        {
             if (!string.IsNullOrEmpty(subtitle))
                 GUILayout.Label(subtitle.Bold());
             GUILayout.BeginHorizontal();
@@ -13,7 +16,8 @@ namespace ModKit.Utility {
             GUILayout.BeginVertical();
         }
 
-        public void Dispose() {
+        public void Dispose()
+        {
             GUILayout.EndVertical();
             GUILayout.EndHorizontal();
         }

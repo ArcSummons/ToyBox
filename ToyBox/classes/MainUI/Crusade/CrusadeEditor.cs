@@ -1,15 +1,8 @@
 ﻿using Kingmaker;
-using Kingmaker.Armies;
-using Kingmaker.Armies.State;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Root;
-using Kingmaker.Globalmap.State;
 using Kingmaker.Kingdom;
 using Kingmaker.Kingdom.Blueprints;
 using ModKit;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
 
 namespace ToyBox.classes.MainUI {
     public static class CrusadeEditor {
@@ -153,14 +146,14 @@ namespace ToyBox.classes.MainUI {
                     UI.Label("Multiplies crusade card resolution time by (1 + modifier). -1 will make things as fast as possible (minimum 1 day to avoid possible bugs)".green());
                 },
             () => {
-                    UI.Slider("Build Time Modifier", ref settings.kingdomBuildingTimeModifier, -1, 2, 0, 2, "", UI.Width(400));
-                    var instance = KingdomState.Instance;
-                    if (instance != null) {
-                        instance.BuildingTimeModifier = settings.kingdomBuildingTimeModifier;
-                    }
-                    UI.Space(25);
-                    UI.Label("Multiplies build time by (1 + modifier). -1 will make new buildings instant.".green());
-                },
+                UI.Slider("Build Time Modifier", ref settings.kingdomBuildingTimeModifier, -1, 2, 0, 2, "", UI.Width(400));
+                var instance = KingdomState.Instance;
+                if (instance != null) {
+                    instance.BuildingTimeModifier = settings.kingdomBuildingTimeModifier;
+                }
+                UI.Space(25);
+                UI.Label("Multiplies build time by (1 + modifier). -1 will make new buildings instant.".green());
+            },
                 () => {
                     var startDate = Game.Instance.BlueprintRoot.Calendar.GetStartDate();
                     var currentDate = KingdomState.Instance.Date;

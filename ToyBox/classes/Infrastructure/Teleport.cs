@@ -1,27 +1,25 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
 // based on code by hambeard (thank you ^_^)
-using Kingmaker;
-using Kingmaker.EntitySystem.Entities;
-using Kingmaker.GameModes;
-using Kingmaker.PubSubSystem;
-using Kingmaker.View;
-using System;
-using UnityEngine;
 using JetBrains.Annotations;
+using Kingmaker;
+using Kingmaker.Blueprints.Area;
+using Kingmaker.Designers;
+using Kingmaker.EntitySystem.Entities;
+using Kingmaker.EntitySystem.Persistence;
+using Kingmaker.GameModes;
 using Kingmaker.Globalmap.Blueprints;
 using Kingmaker.Globalmap.State;
 using Kingmaker.Globalmap.View;
-using Kingmaker.Globalmap;
-using Kingmaker.Utility;
-using Kingmaker.EntitySystem.Persistence;
-using ModKit;
-using UnityModManagerNet;
+using Kingmaker.PubSubSystem;
 using Kingmaker.UI.MVVM._PCView.ServiceWindows.LocalMap;
-using Kingmaker.Visual.LocalMap;
 using Kingmaker.UI.MVVM._VM.ServiceWindows.LocalMap.Utils;
-using Kingmaker.Blueprints.Area;
-using Kingmaker.Designers;
+using Kingmaker.Utility;
+using Kingmaker.View;
+using Kingmaker.Visual.LocalMap;
+using ModKit;
+using System;
 using System.Linq;
+using UnityEngine;
 
 namespace ToyBox {
     public static class Teleport {

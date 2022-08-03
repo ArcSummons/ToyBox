@@ -3,15 +3,18 @@ using System;
 using UnityModManagerNet;
 using static UnityModManagerNet.UnityModManager;
 
-namespace ModKit {
-    public enum LogLevel : int {
+namespace ModKit
+{
+    public enum LogLevel : int
+    {
         Error,
         Warning,
         Info,
         Debug,
         Trace
     }
-    public static partial class Mod {
+    public static partial class Mod
+    {
         public static ModEntry modEntry { get; set; } = null;
         public static string modEntryPath { get; set; } = null;
         private static UnityModManager.ModEntry.ModLogger modLogger;
@@ -19,29 +22,35 @@ namespace ModKit {
         public static LogLevel logLevel = LogLevel.Info;
 
 
-        public static void OnLoad(UnityModManager.ModEntry modEntry) {
+        public static void OnLoad(UnityModManager.ModEntry modEntry)
+        {
             Mod.modEntry = modEntry;
             modLogger = modEntry.Logger;
             modEntryPath = modEntry.Path;
         }
-        public static void Error(string str) {
+        public static void Error(string str)
+        {
             str = str.yellow().bold();
             modLogger?.Error(str + "\n" + Environment.StackTrace);
         }
         public static void Error(Exception ex) => Error(ex.ToString());
-        public static void Warn(string str) {
+        public static void Warn(string str)
+        {
             if (logLevel >= LogLevel.Warning)
                 modLogger?.Log("[Warn] ".orange().bold() + str);
         }
-        public static void Log(string str) {
+        public static void Log(string str)
+        {
             if (logLevel >= LogLevel.Info)
                 modLogger?.Log("[Info] " + str);
         }
-        public static void Debug(string str) {
+        public static void Debug(string str)
+        {
             if (logLevel >= LogLevel.Debug)
                 modLogger?.Log("[Debug] ".green() + str);
         }
-        public static void Trace(string str) {
+        public static void Trace(string str)
+        {
             if (logLevel >= LogLevel.Trace)
                 modLogger?.Log("[Trace] ".color(RGBA.lightblue) + str);
         }

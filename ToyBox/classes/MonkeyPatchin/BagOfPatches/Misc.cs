@@ -2,12 +2,9 @@
 
 using HarmonyLib;
 using JetBrains.Annotations;
-using Owlcat.Runtime.UniRx;
 using Kingmaker;
 using Kingmaker.Achievements;
 using Kingmaker.Blueprints;
-using Kingmaker.Blueprints.Area;
-using Kingmaker.Blueprints.Items;
 using Kingmaker.Blueprints.Items.Components;
 using Kingmaker.Blueprints.Items.Equipment;
 using Kingmaker.Blueprints.Items.Weapons;
@@ -17,41 +14,34 @@ using Kingmaker.Controllers;
 //using Kingmaker.Controllers.GlobalMap;
 using Kingmaker.EntitySystem;
 using Kingmaker.EntitySystem.Entities;
+using Kingmaker.EntitySystem.Persistence;
 using Kingmaker.Enums.Damage;
 using Kingmaker.GameModes;
 using Kingmaker.Items;
 using Kingmaker.RuleSystem;
 using Kingmaker.Settings;
+using Kingmaker.UI._ConsoleUI.CombatStartScreen;
 //using Kingmaker.UI._ConsoleUI.Models;
 using Kingmaker.UI.Common;
+// using Steamworks;
+using Kingmaker.UI.MVVM._PCView.ServiceWindows.Inventory;
+using Kingmaker.UI.MVVM._PCView.Slots;
+using Kingmaker.UI.MVVM._PCView.Vendor;
+using Kingmaker.UI.MVVM._VM.Common;
+using Kingmaker.UI.MVVM._VM.CounterWindow;
+using Kingmaker.UI.TurnBasedMode;
 //using Kingmaker.UI.RestCamp;
-using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Blueprints;
 using Kingmaker.UnitLogic.Class.Kineticist;
 using Kingmaker.Utility;
 using Kingmaker.View;
+using ModKit;
+using Owlcat.Runtime.UniRx;
 using System;
-using System.Collections.Generic;
 using System.Linq;
+using ToyBox.Multiclass;
 //using Kingmaker.UI._ConsoleUI.GroupChanger;
 using UnityEngine;
-using UnityModManager = UnityModManagerNet.UnityModManager;
-// using Steamworks;
-using Kingmaker.Achievements.Platforms;
-using Kingmaker.UI.ServiceWindow;
-using Kingmaker.UI.MVVM._PCView.ServiceWindows.Inventory;
-using Kingmaker.UI.MVVM._PCView.Slots;
-using Kingmaker.UI.MVVM._VM.Common;
-using Kingmaker.UI.MVVM._VM.CounterWindow;
-using Kingmaker.UI.Loot;
-using Kingmaker.UI.MVVM._PCView.Vendor;
-using Kingmaker.UI.TurnBasedMode;
-using Kingmaker.UI._ConsoleUI.CombatStartScreen;
-using Kingmaker.Items.Slots;
-using ModKit;
-using Kingmaker.EntitySystem.Persistence;
-using ToyBox.Multiclass;
-using Kingmaker.UI.MVVM._PCView.ActionBar;
 
 namespace ToyBox.BagOfPatches {
     internal static class Misc {
@@ -134,7 +124,7 @@ namespace ToyBox.BagOfPatches {
                     //modLogger.Log($"AchievementEntity.IsDisabled - {__result}");
                     BlueprintCampaign blueprintCampaign = __instance.Data.SpecificCampaign?.Get();
                     __result = !__instance.Data.OnlyMainCampaign && blueprintCampaign != null && Game.Instance.Player.Campaign != blueprintCampaign || ((UnityEngine.Object)__instance.Data.MinDifficulty != (UnityEngine.Object)null && Game.Instance.Player.MinDifficultyController.MinDifficulty.CompareTo(__instance.Data.MinDifficulty.Preset) < 0 || __instance.Data.MinCrusadeDifficulty > (KingdomDifficulty)(SettingsEntity<KingdomDifficulty>)SettingsRoot.Difficulty.KingdomDifficulty) || (__instance.Data.IronMan && !(bool)(SettingsEntity<bool>)SettingsRoot.Difficulty.OnlyOneSave);
-                        // || (Game.Instance.Player.ModsUser || OwlcatModificationsManager.Instance.IsAnyModActive));
+                    // || (Game.Instance.Player.ModsUser || OwlcatModificationsManager.Instance.IsAnyModActive));
                     //modLogger.Log($"AchievementEntity.IsDisabled - {__result}");
                 }
             }

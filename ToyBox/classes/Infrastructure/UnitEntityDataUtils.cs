@@ -1,7 +1,6 @@
 ﻿// borrowed shamelessly and enhanced from Bag of Tricks https://www.nexusmods.com/pathfinderkingmaker/mods/26, which is under the MIT Licenseusing Kingmaker;
-using System.Collections.Generic;
-using System.Linq;
 using Kingmaker;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.Blueprints.Classes.Selection;
 using Kingmaker.Blueprints.Facts;
 using Kingmaker.Cheats;
@@ -11,12 +10,11 @@ using Kingmaker.GameModes;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 using Kingmaker.UnitLogic.Mechanics;
-using Kingmaker.Utility;
 using Kingmaker.UnitLogic.Parts;
-using Kingmaker.ElementsSystem;
+using Kingmaker.Utility;
 using ModKit;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.Items;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ToyBox {
     public enum UnitSelectType {
@@ -194,10 +192,10 @@ note this code from Owlcat
             ch = Game.Instance?.Player?.AllCharacters.Find(c => c.CharacterName == levelUpUnit.CharacterName);
             return ch != null;
         }
-        
+
         public static bool TryGetClass(this UnitEntityData unit, BlueprintCharacterClass cl, out ClassData cd) {
             cd = unit.Progression.Classes.Find(c => c.CharacterClass == cl);
             return cd != null;
-        } 
+        }
     }
 }

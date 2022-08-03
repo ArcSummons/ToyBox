@@ -2,10 +2,7 @@
 using Kingmaker.Blueprints;
 using Kingmaker.Items;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ToyBox {
     //Fix for enchants added with toybox getting erased by stack merges - EX: If you add mighty fists to an amulet of natural armor, then stick it in inventory where you have another natural armor amulet of the same type, they're merged into a stack and the mighty fists enchant vanishes

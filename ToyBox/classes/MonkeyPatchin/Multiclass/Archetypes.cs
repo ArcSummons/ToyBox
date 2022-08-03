@@ -175,7 +175,7 @@ namespace ToyBox.Multiclass {
                 if (archetype != null) {
                     __instance.LevelUpController.RemoveArchetype(archetype);
                     if (!__instance.LevelUpController.AddArchetype(archetype)) {
-                        MainThreadDispatcher.Post(delegate(object _) {
+                        MainThreadDispatcher.Post(delegate (object _) {
                             __instance.SelectedArchetypeVM.Value = null;
                         }, null);
                     }
@@ -309,7 +309,7 @@ namespace ToyBox.Multiclass {
                 var classSkills = classData.Archetypes.SelectMany(a => a.ClassSkills)
                     .Concat(classData.CharacterClass.ClassSkills).Distinct().ToArray();
                 //this.SelectedClassVM.Value.Class.Name + " — " + this.SelectedArchetypeVM.Value.Archetype.Name;
-                var archetypeName = classData.ArchetypesName(); 
+                var archetypeName = classData.ArchetypesName();
                 if (!string.IsNullOrEmpty(archetypeName)) {
                     __instance.ClassDisplayName.Value = string.Join(" ", classData.CharacterClass.Name, $"({archetypeName})");
                 }

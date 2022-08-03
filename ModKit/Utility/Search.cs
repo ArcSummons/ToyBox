@@ -1,32 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ModKit {
+﻿namespace ModKit
+{
 
     using System;
     using System.Collections.Generic;
-    using System.Reflection;
     using System.Linq;
 
-    namespace BlueprintExplorer {
-        public interface ISearchable {
+    namespace BlueprintExplorer
+    {
+        public interface ISearchable
+        {
             Dictionary<string, Func<string>> Providers { get; } // named functions to extract different text out of the target
             Dictionary<string, MatchResult> Matches { get; set; }                   // place to store search results
         }
-        public static class MatchHelpers {
+        public static class MatchHelpers
+        {
             public static bool HasMatches(this ISearchable searchable, float scoreThreshold = 10) => searchable.Matches == null || searchable.Matches.Where(m => m.Value.IsMatch && m.Value.Score >= scoreThreshold).Any();
         }
-        public class MatchResult {
-            public struct Span {
+        public class MatchResult
+        {
+            public struct Span
+            {
                 public UInt16 From;
                 public UInt16 Length;
 
-                public Span(int start, int length = -1) {
+                public Span(int start, int length = -1)
+                {
                     From = (ushort)start;
                     Length = (ushort)length;
                 }
-                public void End(int end) {
+                public void End(int end)
+                {
                     Length = (UInt16)(end - From);
                 }
             }
@@ -50,13 +53,15 @@ namespace ModKit {
 
             public float Score => (TargetRatio * MatchRatio * 1.0f) + (BestRun * 4) + (GoodRuns * 2) - Penalty + Bonus;
 
-            public MatchResult(ISearchable target, string key, string text, MatchQuery context) {
+            public MatchResult(ISearchable target, string key, string text, MatchQuery context)
+            {
                 Target = target;
                 Key = key;
                 Text = text;
                 this.Context = context;
             }
-            public void AddSpan(Span span) {
+            public void AddSpan(Span span)
+            {
                 spans.Add(span);
 
                 //update some stats that get used for scoring
@@ -67,20 +72,24 @@ namespace ModKit {
                 TotalMatched += span.Length;
             }
         }
-        public class MatchQuery {
+        public class MatchQuery
+        {
             public string SearchText;                                   // general search text
             public Dictionary<string, string> RestrictedSearchTexts;    // restricted to certain provider keys
-            private MatchResult Match(string searchText, ISearchable searchable, string key, string text) {
+            private MatchResult Match(string searchText, ISearchable searchable, string key, string text)
+            {
                 var result = new MatchResult(searchable, key, text, this);
                 var index = text.IndexOf(searchText);
-                if (index >= 0) {
+                if (index >= 0)
+                {
                     var span = new MatchResult.Span(index, searchText.Length);
                     result.AddSpan(span);
                     result.TargetRatio = result.TotalMatched / (float)text.Length;
                 }
                 return result;
             }
-            private MatchResult FuzzyMatch(ISearchable searchable, string key, string text) {
+            private MatchResult FuzzyMatch(ISearchable searchable, string key, string text)
+            {
                 var result = new MatchResult(searchable, key, text, this);
 
                 var searchTextIndex = 0;
@@ -97,7 +106,8 @@ namespace ModKit {
                 // penalise matches that don't have a common prefix, while increasing searchTextIndex and targetIndex to the first match, so:
                 // n:bOb  h:hellOworldbob
                 //    ^         ^
-                while (targetIndex == -1 && searchTextIndex < searchText.Length) {
+                while (targetIndex == -1 && searchTextIndex < searchText.Length)
+                {
                     if (searchTextIndex == 0)
                         result.Penalty = 2;
                     else
@@ -107,7 +117,8 @@ namespace ModKit {
                 }
 
                 // continue to match the next searchTextIndex greedily in target
-                while (searchTextIndex < searchText.Length) {
+                while (searchTextIndex < searchText.Length)
+                {
                     // find the next point in target that matches searchIndex:
                     // n:bOb h:helloworldBob
                     //     ^             ^
@@ -117,7 +128,8 @@ namespace ModKit {
 
                     //continue matching while both are in sync
                     var span = new MatchResult.Span(targetIndex);
-                    while (targetIndex < target.Length && searchTextIndex < searchText.Length && searchText[searchTextIndex] == target[targetIndex]) {
+                    while (targetIndex < target.Length && searchTextIndex < searchText.Length && searchText[searchTextIndex] == target[targetIndex])
+                    {
                         //if this span is rooted at the start of the word give a bonus because start is most importatn
                         if (span.From == 0 && searchTextIndex > 0)
                             result.Bonus += result.Bonus;
@@ -133,12 +145,15 @@ namespace ModKit {
                 return result;
             }
 
-            public MatchQuery(string queryText) {
+            public MatchQuery(string queryText)
+            {
                 var unrestricted = new List<string>();
                 RestrictedSearchTexts = new();
                 var terms = queryText.Split(' ');
-                foreach (var term in terms) {
-                    if (term.Contains(':')) {
+                foreach (var term in terms)
+                {
+                    if (term.Contains(':'))
+                    {
                         var pair = term.Split(':');
                         RestrictedSearchTexts[pair[0]] = pair[1];
                     }
@@ -148,15 +163,20 @@ namespace ModKit {
                 SearchText = string.Join(" ", unrestricted);
             }
 
-            public ISearchable Evaluate(ISearchable searchable) {
-                if (SearchText?.Length > 0 || RestrictedSearchTexts.Count > 0) {
+            public ISearchable Evaluate(ISearchable searchable)
+            {
+                if (SearchText?.Length > 0 || RestrictedSearchTexts.Count > 0)
+                {
                     searchable.Matches = new();
-                    foreach (var provider in searchable.Providers) {
+                    foreach (var provider in searchable.Providers)
+                    {
                         var key = provider.Key;
                         var text = provider.Value();
                         var foundRestricted = false;
-                        foreach (var entry in RestrictedSearchTexts) {
-                            if (key.StartsWith(entry.Key)) {
+                        foreach (var entry in RestrictedSearchTexts)
+                        {
+                            if (key.StartsWith(entry.Key))
+                            {
                                 searchable.Matches[key] = Match(entry.Value, searchable, key, text);
                                 foundRestricted = true;
                                 break;
@@ -170,7 +190,8 @@ namespace ModKit {
                     searchable.Matches = null;
                 return searchable;
             }
-            public void UpdateSearchResults(IEnumerable<ISearchable> searchables) {
+            public void UpdateSearchResults(IEnumerable<ISearchable> searchables)
+            {
                 foreach (var searchable in searchables)
                     this.Evaluate(searchable);
             }

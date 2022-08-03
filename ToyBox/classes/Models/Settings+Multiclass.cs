@@ -1,11 +1,9 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using ModKit.Utility;
-using System.Collections.Generic;
+using Kingmaker.Blueprints.Classes;
 using Kingmaker.UnitLogic;
 using ModKit;
-using Kingmaker.Blueprints.Classes;
-using Kingmaker.EntitySystem;
-using Newtonsoft.Json;
+using ModKit.Utility;
+using System.Collections.Generic;
 
 namespace ToyBox {
     public class ArchetypeOptions : HashSet<string> {
@@ -66,7 +64,7 @@ namespace ToyBox {
         }
         public static void Set(UnitDescriptor ch, MulticlassOptions options) {
             //modLogger.Log($"stack: {System.Environment.StackTrace}");
-            if (ch == null || ch.CharacterName == "Knight Commander") 
+            if (ch == null || ch.CharacterName == "Knight Commander")
                 Main.settings.multiclassSettings[CharGenKey] = options;
             else {
                 if (ch.HashKey() == null) return;

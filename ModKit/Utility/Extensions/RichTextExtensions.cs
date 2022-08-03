@@ -3,9 +3,12 @@ using System.Text;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace ModKit.Utility {
-    public static class StringExtensions {
-        public static bool Matches(this string source, string other) {
+namespace ModKit.Utility
+{
+    public static class StringExtensions
+    {
+        public static bool Matches(this string source, string other)
+        {
             if (source == null || other == null)
                 return false;
 #if false
@@ -14,7 +17,8 @@ namespace ModKit.Utility {
             return source.IndexOf(other, 0, StringComparison.InvariantCultureIgnoreCase) != -1;
 #endif
         }
-        public static string MarkedSubstring(this string source, string other) {
+        public static string MarkedSubstring(this string source, string other)
+        {
             if (string.IsNullOrWhiteSpace(source) || string.IsNullOrWhiteSpace(other))
                 return source;
 #if false
@@ -24,14 +28,16 @@ namespace ModKit.Utility {
             //source = source.Replace(source, other.Cyan()).Bold();
 #else
             var index = source.IndexOf(other, StringComparison.InvariantCultureIgnoreCase);
-            if (index != -1) {
+            if (index != -1)
+            {
                 var substr = source.Substring(index, other.Length);
                 source = source.Replace(substr, substr.Cyan()).Bold();
             }
 #endif
             return source;
         }
-        public static string Repeat(this string s, int n) {
+        public static string Repeat(this string s, int n)
+        {
             if (n < 0 || s == null || s.Length == 0)
                 return s;
             return new StringBuilder(s.Length * n).Insert(0, s, n).ToString();
@@ -40,10 +46,12 @@ namespace ModKit.Utility {
 
     }
 
-    public static class RichTextExtensions {
+    public static class RichTextExtensions
+    {
         // https://docs.unity3d.com/Manual/StyledText.html
 
-        public enum RGBA : uint {
+        public enum RGBA : uint
+        {
             aqua = 0x00ffffff,
             blue = 0x8080ffff,
             brown = 0xC09050ff, //0xa52a2aff,

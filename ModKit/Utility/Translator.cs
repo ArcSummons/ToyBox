@@ -6,13 +6,17 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModKit {
-    public static class Translater {
+namespace ModKit
+{
+    public static class Translater
+    {
         public static Dictionary<string, string> cachedTranslations = new();
 
 #if true
-        public static async Task MassTranslate(List<string> strings) {
-            using (var client = new HttpClient()) {
+        public static async Task MassTranslate(List<string> strings)
+        {
+            using (var client = new HttpClient())
+            {
                 var fromLanguage = "ru";//Russian
                 var toLanguage = "en";//English
                 var text = String.Join(" | ", strings);
@@ -69,23 +73,27 @@ namespace ModKit {
             }
         }
 #endif
-        public static String Translate(this string text) {
+        public static String Translate(this string text)
+        {
             if (cachedTranslations.TryGetValue(text, out var value))
                 return value;
 #if true
             var fromLanguage = "ru";//Russian
             var toLanguage = "en";//English
             var url = $"https://translate.googleapis.com/translate_a/single?client=gtx&sl={fromLanguage}&tl={toLanguage}&dt=t&q={Uri.EscapeDataString(text)}";
-            var webClient = new WebClient {
+            var webClient = new WebClient
+            {
                 Encoding = Encoding.UTF8
             };
-            try {
+            try
+            {
                 var result = webClient.DownloadString(url);
                 result = result.Substring(4, result.IndexOf("\"", 4, StringComparison.Ordinal) - 4);
                 cachedTranslations[text] = result;
                 return result;
             }
-            catch (Exception e) {
+            catch (Exception e)
+            {
                 Mod.Log(url);
                 Mod.Error(e);
                 return text;

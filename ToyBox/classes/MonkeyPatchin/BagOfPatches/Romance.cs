@@ -1,19 +1,9 @@
 ﻿using HarmonyLib;
 using Kingmaker;
-using Kingmaker.Blueprints;
 using Kingmaker.Designers.EventConditionActionSystem.Conditions;
 using Kingmaker.ElementsSystem;
-using Kingmaker.UI.MVVM._PCView.ActionBar;
-using Kingmaker.UI.MVVM._VM.Tooltip.Templates;
-using Kingmaker.UI.UnitSettings;
 using ModKit;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TMPro;
-using UnityEngine;
 
 namespace ToyBox.BagOfPatches {
     internal static class Romance {
@@ -123,7 +113,7 @@ namespace ToyBox.BagOfPatches {
             { "d9fd5839ef1a44fe81473fc2bac2078b", true },   // CrusadeEvent05
         };
 
-        
+
         [HarmonyPatch(typeof(PcFemale), nameof(PcFemale.CheckCondition))]
         public static class PcFemale_CheckCondition_Patch {
             public static void Postfix(PcFemale __instance, ref bool __result) {
@@ -147,7 +137,7 @@ namespace ToyBox.BagOfPatches {
             public static void Postfix(ItemsEnough __instance, ref bool __result) {
                 if (!settings.toggleAllowAnyGenderRomance || __instance?.Owner is null) return;
                 Mod.Debug($"checking {__instance.ToString()} guid:{__instance.AssetGuid} owner:{__instance.Owner.name} guid: {__instance.Owner.AssetGuid}) value: {__result}");
-             //   if (PcMaleOverrides.TryGetValue(__instance.Owner.AssetGuid.ToString(), out var value)) { Mod.Debug($"overiding {__instance.Owner.name} to {value}"); __result = value; }
+                //   if (PcMaleOverrides.TryGetValue(__instance.Owner.AssetGuid.ToString(), out var value)) { Mod.Debug($"overiding {__instance.Owner.name} to {value}"); __result = value; }
             }
         }
 

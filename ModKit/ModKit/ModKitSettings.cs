@@ -1,6 +1,8 @@
 ﻿using UnityModManagerNet;
 
-namespace ModKit {
-    public class ModKitSettings : UnityModManager.ModSettings {
+namespace ModKit
+{
+    public class ModKitSettings : UnityModManager.ModSettings
+    {
     }
 }

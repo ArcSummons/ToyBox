@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using Kingmaker;
 using Kingmaker.EntitySystem.Entities;
-using Kingmaker.Enums;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Abilities.Components.TargetCheckers;

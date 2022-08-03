@@ -1,7 +1,6 @@
 ﻿using HarmonyLib;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Class.LevelUp.Actions;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 

@@ -1,21 +1,17 @@
 ﻿using HarmonyLib;
+using Kingmaker;
+using Kingmaker.Blueprints;
+using Kingmaker.Blueprints.Items.Equipment;
+using Kingmaker.EntitySystem.Entities;
+using Kingmaker.Items;
+using Kingmaker.UI.MVVM._VM.CharGen;
 using Kingmaker.Utility;
-using Owlcat.Runtime.Core.Logging;
 using ModKit;
+using Owlcat.Runtime.Core.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityModManagerNet;
-using static UnityModManagerNet.UnityModManager;
 using Logger = UnityModManagerNet.UnityModManager.Logger;
-using Kingmaker.UI.MVVM._VM.CharGen;
-using Kingmaker.EntitySystem.Entities;
-using Kingmaker.Blueprints.Items.Equipment;
-using Kingmaker;
-using Kingmaker.Blueprints;
-using Kingmaker.Items;
 
 namespace ToyBox.classes.MonkeyPatchin.BagOfPatches {
     internal class Development {
@@ -87,7 +83,7 @@ namespace ToyBox.classes.MonkeyPatchin.BagOfPatches {
 
         [HarmonyPatch(typeof(CharGenContextVM), nameof(CharGenContextVM.HandleRespecInitiate))]
         private static class CharGenContextVM_HandleRespecInitiate_Patch {
-            
+
             private static void Prefix(ref CharGenContextVM __instance, ref UnitEntityData character, ref Action successAction) {
                 if (settings.toggleRespecRefundScrolls) {
                     var scrolls = new List<BlueprintItemEquipmentUsable>();

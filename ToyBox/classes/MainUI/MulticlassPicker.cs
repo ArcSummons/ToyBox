@@ -1,12 +1,11 @@
 ﻿// Copyright < 2021 > Narria (github user Cabarius) - License: MIT
-using System.Linq;
 using Kingmaker;
 using Kingmaker.Blueprints.Classes;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.Utility;
 using ModKit;
+using System.Linq;
 using ToyBox.Multiclass;
-using UnityEngine;
 
 namespace ToyBox {
     public class MulticlassPicker {

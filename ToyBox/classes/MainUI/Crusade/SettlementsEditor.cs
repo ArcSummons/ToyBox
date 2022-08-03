@@ -1,12 +1,9 @@
 ﻿
 using Kingmaker.Kingdom;
 using ModKit;
-using static ModKit.UI;
-using ModKit.Utility;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-using UnityModManagerNet;
+using static ModKit.UI;
 
 
 namespace ToyBox.classes.MainUI {
