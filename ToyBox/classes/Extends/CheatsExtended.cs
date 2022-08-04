@@ -6,7 +6,7 @@ using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 
-namespace ModKit.Utility.Extends
+namespace ToyBox.classes.Extends
 {
     public class CheatsExtended
     {

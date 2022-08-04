@@ -6,7 +6,7 @@ using Kingmaker.Kingdom;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
 using ModKit;
-using ModKit.Utility.Extends;
+using ToyBox.classes.Extends;
 using System;
 using System.Linq;
 using ToyBox;
@@ -131,7 +131,6 @@ namespace ToyBox {
                 () => BindableActionButton(RemoveBuffs),
                 () => BindableActionButton(RemoveDeathsDoor),
                 () => BindableActionButton(KillAllEnemies),
-                //() => UI.BindableActionButton(SummonZoo),
                 () => BindableActionButton(LobotomizeAllEnemies),
                 () => { }
                 );
