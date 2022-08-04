@@ -14,7 +14,6 @@
     <Description>A game agnostic toolkit for building Mod UI for unity mod manager based mods.  Builds on ModMaker (https://github.com/cabarius/WrathModMaker and all past repos it was forked from)</Description>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Utility\Extends\CheatsExtended.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModKit\LocalizationManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModKit\MenuManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModKit\ModManager.cs" />

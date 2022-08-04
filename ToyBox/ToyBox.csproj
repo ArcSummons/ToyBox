@@ -159,6 +159,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="classes\CustomEnchantmentStackingFix.cs" />
+    <Compile Include="classes\Extends\CheatsExtended.cs" />
+    <Compile Include="classes\Extends\Class1.cs" />
     <Compile Include="classes\Infrastructure\Borrowed\SmartConsole.cs" />
     <Compile Include="classes\Infrastructure\Cheats.cs" />
     <Compile Include="classes\Infrastructure\HumanFriendly.cs" />

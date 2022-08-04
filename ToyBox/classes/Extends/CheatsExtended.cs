@@ -6,7 +6,7 @@ using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 
-namespace ToyBox.classes.Extends
+namespace ToyBox.classes.Extends 
 {
     public class CheatsExtended
     {
@@ -31,6 +31,12 @@ namespace ToyBox.classes.Extends
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("03464790f40c3c24aa684b57155f3280"), /* Haste */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("9100128a9fd947b89344ad27f98833ff"), /* Angel Ward */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("87b8c6270ea85c743afc734dfe99afee"), /* Bless */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("0bd122cf77c3d6948929de45e18e4fed"), /* Bone Shield */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("35f3724d4e8877845af488d167cb8a89"), /* Mind Blank */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("a04d666d8b1f5a2419f1adc6874ae65a"), /* Death Ward */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("5274ddc289f4a7447b7ace68ad8bebb0"), /* Shield of Faith */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("6784d2dfa2e552448828bffc9ca7a01b"), /* Feather Fall */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("235533b62159790499ced35860636bb2"), /* Freedom of Movement */
                 };
 
                 foreach (BlueprintBuff buffVar in buffArray)

@@ -22,8 +22,8 @@ namespace ToyBox {
         private const string RestAll = "Rest All";
         private const string RestSelected = "Rest Selected";
         private const string Empowered = "Empowered";
-        private const string FullBuff1 = "Buff (Bless/Haste/Displacement/Heroism)";
-        private const string FullBuff2 = "Buff (True Seeing/Haste/Angel Ward/Bless)";
+        private const string FullBuff1 = "Buff Simple Extended";
+        private const string FullBuff2 = "Buff Complex Extended";
         private const string GoddesBuffs = "Buff Like A Goddess";
         private const string RemoveBuffs = "Remove Buffs";
         private const string RemoveDeathsDoor = "Remove Deaths Door";
@@ -477,9 +477,6 @@ namespace ToyBox {
 
                 () => Toggle("No Fog Of War", ref settings.toggleNoFogOfWar),
                 () => Toggle("Restore Spells & Skills After Combat", ref settings.toggleRestoreSpellsAbilitiesAfterCombat),
-                //() => UI.Toggle("Recharge Items After Combat", ref settings.toggleRechargeItemsAfterCombat),
-                //() => UI.Toggle("Access Remote Characters", ref settings.toggleAccessRemoteCharacters,0),
-                //() => UI.Toggle("Show Pet Portraits", ref settings.toggleShowAllPartyPortraits,0),
                 () => Toggle("Instant Rest After Combat", ref settings.toggleInstantRestAfterCombat),
                 () => Toggle("Disallow Companions Leaving Party (experimental; only enable while needed)", ref settings.toggleBlockUnrecruit),
                 () => Toggle("Instant change party members", ref settings.toggleInstantChangeParty),
