@@ -21,12 +21,12 @@ namespace ToyBox {
         private const string RestAll = "Rest All";
         private const string RestSelected = "Rest Selected";
         private const string Empowered = "Empowered";
-        private const string FullBuffPlease = "Common Buffs";
+        private const string FullBuff1 = "Buff (Bless/Haste/Displacement/Heroism)";
+        private const string FullBuff2 = "Buff (undecided)";
         private const string GoddesBuffs = "Buff Like A Goddess";
         private const string RemoveBuffs = "Remove Buffs";
         private const string RemoveDeathsDoor = "Remove Deaths Door";
         private const string KillAllEnemies = "Kill All Enemies";
-        //private const string SummonZoo = "Summon Zoo"
         private const string LobotomizeAllEnemies = "Lobotomize Enemies";
 
         // cheats common
@@ -47,12 +47,12 @@ namespace ToyBox {
             KeyBindings.RegisterAction(RestAll, () => CheatsCombat.RestAll());
             KeyBindings.RegisterAction(RestSelected, () => Cheats.RestSelected());
             KeyBindings.RegisterAction(Empowered, () => CheatsCombat.Empowered(""));
-            KeyBindings.RegisterAction(FullBuffPlease, () => CheatsCombat.FullBuffPlease(""));
+            KeyBindings.RegisterAction(FullBuff1, () => CheatsCombat.FullBuffPlease(""));
+            KeyBindings.RegisterAction(FullBuff2, () => CheatsCombat.FullBuffPlease(""));
             KeyBindings.RegisterAction(GoddesBuffs, () => CheatsCombat.Iddqd(""));
             KeyBindings.RegisterAction(RemoveBuffs, () => Actions.RemoveAllBuffs());
             KeyBindings.RegisterAction(RemoveDeathsDoor, () => CheatsCombat.DetachDebuff());
             KeyBindings.RegisterAction(KillAllEnemies, () => CheatsCombat.KillAll());
-            //KeyBindings.RegisterAction(SummonZoo, () => CheatsCombat.SpawnInspectedEnemiesUnderCursor(""));
             KeyBindings.RegisterAction(LobotomizeAllEnemies, () => Actions.LobotomizeAllEnemies());
             // Common
             KeyBindings.RegisterAction(TeleportPartyToYou, () => Teleport.TeleportPartyToPlayer());
@@ -121,7 +121,8 @@ namespace ToyBox {
             HStack("Combat", 2,
                 () => BindableActionButton(RestAll),
                 () => BindableActionButton(RestSelected),
-                () => BindableActionButton(FullBuffPlease),
+                () => BindableActionButton(FullBuff1),
+                () => BindableActionButton(FullBuff2),
                 () => BindableActionButton(Empowered),
                 () => BindableActionButton(GoddesBuffs),
                 () => BindableActionButton(RemoveBuffs),
