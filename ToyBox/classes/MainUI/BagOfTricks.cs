@@ -38,7 +38,7 @@ namespace ToyBox {
         private const string ChangeParty = "Change Party";
         private const string ChangWeather = "Change Weather";
 
-        
+
 
         // other
         private const string TimeScaleMultToggle = "Main/Alt Timescale";
