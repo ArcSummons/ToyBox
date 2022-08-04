@@ -6,6 +6,7 @@ using Kingmaker.Kingdom;
 using Kingmaker.PubSubSystem;
 using Kingmaker.UnitLogic;
 using ModKit;
+using ModKit.Utility.Extends;
 using System;
 using System.Linq;
 using ToyBox;
@@ -22,7 +23,7 @@ namespace ToyBox {
         private const string RestSelected = "Rest Selected";
         private const string Empowered = "Empowered";
         private const string FullBuff1 = "Buff (Bless/Haste/Displacement/Heroism)";
-        private const string FullBuff2 = "Buff (undecided)";
+        private const string FullBuff2 = "Buff (True Seeing/Haste/Angel Ward/Bless)";
         private const string GoddesBuffs = "Buff Like A Goddess";
         private const string RemoveBuffs = "Remove Buffs";
         private const string RemoveDeathsDoor = "Remove Deaths Door";
@@ -37,6 +38,8 @@ namespace ToyBox {
         private const string ChangeParty = "Change Party";
         private const string ChangWeather = "Change Weather";
 
+        
+
         // other
         private const string TimeScaleMultToggle = "Main/Alt Timescale";
         private const string PreviewDialogResults = "Preview Results";
@@ -47,8 +50,8 @@ namespace ToyBox {
             KeyBindings.RegisterAction(RestAll, () => CheatsCombat.RestAll());
             KeyBindings.RegisterAction(RestSelected, () => Cheats.RestSelected());
             KeyBindings.RegisterAction(Empowered, () => CheatsCombat.Empowered(""));
-            KeyBindings.RegisterAction(FullBuff1, () => CheatsCombat.FullBuffPlease(""));
-            KeyBindings.RegisterAction(FullBuff2, () => CheatsCombat.FullBuffPlease(""));
+            KeyBindings.RegisterAction(FullBuff1, () => CheatsExtended.FullBuff1());
+            KeyBindings.RegisterAction(FullBuff2, () => CheatsExtended.FullBuff2());
             KeyBindings.RegisterAction(GoddesBuffs, () => CheatsCombat.Iddqd(""));
             KeyBindings.RegisterAction(RemoveBuffs, () => Actions.RemoveAllBuffs());
             KeyBindings.RegisterAction(RemoveDeathsDoor, () => CheatsCombat.DetachDebuff());
