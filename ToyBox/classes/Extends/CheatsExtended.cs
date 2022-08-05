@@ -38,6 +38,7 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("0adecbf63b614e846bfe15c33f34507e"), /* See Invisibility */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("50a77710a7c4914499d0254e76a808e5"), /* Spell Resistance */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b175001b42b1a02479881b72fe132116"), /* Bull STR */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("4814db563c105e64d948161162715661"), /* False Life */
                 };
 
                 foreach (BlueprintBuff buffVar in buffArray) {
