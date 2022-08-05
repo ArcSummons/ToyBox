@@ -6,25 +6,18 @@ using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 
-namespace ToyBox.classes.Extends 
-{
-    public class CheatsExtended
-    {
-        public static void FullBuff1()
-        {
-            foreach (UnitEntityData Character in Game.Instance.Player.Party)
-            {
-                foreach (BlueprintBuff buffVar in Game.Instance.BlueprintRoot.Cheats.FullBuffList)
-                {
+namespace ToyBox.classes.Extends {
+    public class CheatsExtended {
+        public static void FullBuff1() {
+            foreach (UnitEntityData Character in Game.Instance.Player.Party) {
+                foreach (BlueprintBuff buffVar in Game.Instance.BlueprintRoot.Cheats.FullBuffList) {
                     GameHelper.ApplyBuff(Character, buffVar, null);
                 }
             }
         }
 
-        public static void FullBuff2()
-        {
-            foreach (UnitEntityData unit in Game.Instance.Player.Party)
-            {
+        public static void FullBuff2() {
+            foreach (UnitEntityData unit in Game.Instance.Player.Party) {
                 BlueprintBuff[] buffArray =
                 {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("09b4b69169304474296484c74aa12027"), /* True Seeing */
@@ -44,8 +37,7 @@ namespace ToyBox.classes.Extends
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("63e2a6323c2bbff40a87fcd522778032"), /* Resist Sonic */
                 };
 
-                foreach (BlueprintBuff buffVar in buffArray)
-                {
+                foreach (BlueprintBuff buffVar in buffArray) {
                     GameHelper.ApplyBuff(unit, buffVar, null);
                 }
             }
