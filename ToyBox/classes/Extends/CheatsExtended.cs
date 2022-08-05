@@ -39,6 +39,7 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("50a77710a7c4914499d0254e76a808e5"), /* Spell Resistance */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b175001b42b1a02479881b72fe132116"), /* Bull STR */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("4814db563c105e64d948161162715661"), /* False Life */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("c5455f88975e16648b4abc47a28fa120"), /* Last Stand Effect */
                 };
 
                 foreach (BlueprintBuff buffVar in buffArray) {
