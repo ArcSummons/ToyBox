@@ -39,7 +39,14 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("50a77710a7c4914499d0254e76a808e5"), /* Spell Resistance */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b175001b42b1a02479881b72fe132116"), /* Bull STR */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("4814db563c105e64d948161162715661"), /* False Life */
+
+                    /** EXPERIMENTAL **/
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("8801f41b253263249a3d3a46cdf3b276"), /* Angel Ward Harm */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("a00be2f66cc2ee34a847e19244b30239"), /* Angel Ward Disease */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("384e8507f54fd3342ad9fd6101bc106a"), /* Angel Ward Unclean */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("c5455f88975e16648b4abc47a28fa120"), /* Last Stand Effect */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("3db4a1f9ffa46e7469f817bced1a0df2"), /* Ascendant Summon */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("b8da3ec045ec04845a126948e1f4fc1a"), /* Heroism Greater */
                 };
 
                 foreach (BlueprintBuff buffVar in buffArray) {
