@@ -57,7 +57,6 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("5d97cd157d9f52441b6e5ab665d1b36f"), /* Azata Rest */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("444de30dc7a99144e852bd7dbaeddaad"), /* Azata Tree Strong */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("adcc8e0615fa4e37bd7e5854302203fe"), /* Trickster Double Damage */
-                    Utilities.GetBlueprintByGuid<BlueprintBuff>("cdfb5dca7d93d574cb15f59c0625059c"), /* Trickster Stealth */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("65ea55e5521d43409d102defd153757a"), /* Legend Rest */
 
                     /** Ring Stat Effect **/
@@ -73,6 +72,14 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("2735973380b603c489dc2556edf485ae"), /* STR */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("810a327cb197bc64d8984ed638fb554a"), /* DMG */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("e4a2e8fe03063104098d088f70ff1d62"), /* WIS */
+
+                    /** Weapon Effect **/
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("2f2eb113da65b6b4fbf69e35c90afe02"), /* Chaos Buff */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("418e078eb0eb6494ab65d124ab5eb7fe"), /* Evil Buff */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("cbe785a099249164eb2204f553437e3d"), /* Good Buff */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("57e74017b222b274790c5fa162855035"), /* Lawful Buff */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("5fe69b8d755a4bd18e4e67c5613f76af"), /* Slasing Buff */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("4bbff3a1c8894a46be2515029ea044b0"), /* Magic Damage Fighter Elemental */
                 };
 
                 foreach (BlueprintBuff buffVar in buffArray) {
