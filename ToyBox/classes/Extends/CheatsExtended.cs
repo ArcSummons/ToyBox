@@ -53,6 +53,13 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("07162c026878db04cabe4fc3edc90585"), /* Shaman Ward of Flame */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("add62fda83dcbfb408ef2976e0271d2c"), /* Shaman Ward of Wind */
 
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("256ae19b117c40868248154da12d17b8"), /* Aeon Corruption Protection */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("5d97cd157d9f52441b6e5ab665d1b36f"), /* Azata Rest */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("444de30dc7a99144e852bd7dbaeddaad"), /* Azata Tree Strong */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("adcc8e0615fa4e37bd7e5854302203fe"), /* Trickster Double Damage */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("cdfb5dca7d93d574cb15f59c0625059c"), /* Trickster Stealth */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("65ea55e5521d43409d102defd153757a"), /* Legend Rest */
+
                     /** Ring Stat Effect **/
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("a762480e419a3d948bceca0f68f00f3a"), /* AC */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("5e228a4d56de60245a2671db14c2f864"), /* CHA */
