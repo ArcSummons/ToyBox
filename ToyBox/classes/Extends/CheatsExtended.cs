@@ -84,7 +84,18 @@ namespace ToyBox.classes.Extends {
         }
 
         public static void StatInit() {
-            GameHelper.GetPlayerCharacter().Stats.SkillUseMagicDevice.BaseValue = 40;
+            GameHelper.GetPlayerCharacter().Stats.SkillMobility.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillAthletics.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillPerception.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillThievery.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillPersuasion.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillStealth.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillUseMagicDevice.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillKnowledgeArcana.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillKnowledgeWorld.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillLoreNature.BaseValue = 1;
+            GameHelper.GetPlayerCharacter().Stats.SkillLoreReligion.BaseValue = 1;
+
             GameHelper.GetPlayerCharacter().Stats.Strength.BaseValue = 40;
             GameHelper.GetPlayerCharacter().Stats.Dexterity.BaseValue = 40;
             GameHelper.GetPlayerCharacter().Stats.Constitution.BaseValue = 40;
