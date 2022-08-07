@@ -4,6 +4,7 @@ using Kingmaker;
 using Kingmaker.Cheats;
 using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
+using Kingmaker.UI.Common;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 
 namespace ToyBox.classes.Extends {
@@ -80,6 +81,17 @@ namespace ToyBox.classes.Extends {
                     GameHelper.ApplyBuff(unit, buffVar, null);
                 }
             }
+        }
+
+        public static void StatInit() {
+            GameHelper.GetPlayerCharacter().Stats.SkillUseMagicDevice.BaseValue = 40;
+            GameHelper.GetPlayerCharacter().Stats.Strength.BaseValue = 40;
+            GameHelper.GetPlayerCharacter().Stats.Dexterity.BaseValue = 40;
+            GameHelper.GetPlayerCharacter().Stats.Constitution.BaseValue = 40;
+            GameHelper.GetPlayerCharacter().Stats.Intelligence.BaseValue = 40;
+            GameHelper.GetPlayerCharacter().Stats.Wisdom.BaseValue = 40;
+            GameHelper.GetPlayerCharacter().Stats.Charisma.BaseValue = 40;
+            UIUtility.SendWarning("Stats init set to 40");
         }
     }
 }

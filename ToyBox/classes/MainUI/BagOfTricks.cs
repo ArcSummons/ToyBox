@@ -166,6 +166,12 @@ namespace ToyBox {
                         Actions.RunPerceptionTriggers();
                     });
                 },
+                () => {
+                    NonBindableActionButton("Set Init to 40", () => {
+                        CheatsExtended.StatInit();
+                        Actions.RunPerceptionTriggers();
+                    });
+                },
                 () => BindableActionButton(ChangWeather),
                 () => NonBindableActionButton("Give All Items", () => CheatsUnlock.CreateAllItems("")),
                 () => NonBindableActionButton("Identify All", () => Actions.IdentifyAll()),
