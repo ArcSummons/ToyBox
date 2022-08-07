@@ -1,4 +1,4 @@
-﻿/** Cheat Extension by ArcSummons */
+﻿/* Cheat Extension by ArcSummons */
 
 using Kingmaker;
 using Kingmaker.Cheats;
@@ -27,7 +27,6 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("0bd122cf77c3d6948929de45e18e4fed"), /* Bone Shield */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("35f3724d4e8877845af488d167cb8a89"), /* Mind Blank */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b0253e57a75b621428c1b89de5a937d1"), /* Death Ward */
-                    Utilities.GetBlueprintByGuid<BlueprintBuff>("5274ddc289f4a7447b7ace68ad8bebb0"), /* Shield of Faith */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("6784d2dfa2e552448828bffc9ca7a01b"), /* Feather Fall */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("235533b62159790499ced35860636bb2"), /* Freedom of Movement */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b87a0e8a961c63a44a952822fe975edb"), /* Resist Acid */
@@ -38,7 +37,7 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("50a77710a7c4914499d0254e76a808e5"), /* Spell Resistance */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b175001b42b1a02479881b72fe132116"), /* Bull STR */
 
-                    /** EXPERIMENTAL **/
+                    /* EXPERIMENTAL */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("9100128a9fd947b89344ad27f98833ff"), /* Angel Ward Weakness Divine Spell */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("68d82c1249d3e4c47a69946b1eea0dd6"), /* Angel Ward Weakness */
 
@@ -50,7 +49,9 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("adcc8e0615fa4e37bd7e5854302203fe"), /* Trickster Double Damage */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("65ea55e5521d43409d102defd153757a"), /* Legend Rest */
 
-                    /** Ring Stat Effect **/
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("a6e5fd0f45730f34fa23f309e06078fa"), /* Gyronna's Amulet */
+
+                    /* Ring Stat Effect */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("a762480e419a3d948bceca0f68f00f3a"), /* AC */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("5e228a4d56de60245a2671db14c2f864"), /* CHA */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b76f97e0b8da3d4478108ad62186b03f"), /* CON */
@@ -61,12 +62,17 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("068035c7cd581c2419567062e573eaaa"), /* SKI */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("f7de309109e6ef24bbab17dce8fd547d"), /* SDC */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("2735973380b603c489dc2556edf485ae"), /* STR */
-                    Utilities.GetBlueprintByGuid<BlueprintBuff>("810a327cb197bc64d8984ed638fb554a"), /* DMG */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("e4a2e8fe03063104098d088f70ff1d62"), /* WIS */
 
-                    /** Weapon Effect **/
+                    /* Weapon Effect */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("5fe69b8d755a4bd18e4e67c5613f76af"), /* Slasing Buff */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("4bbff3a1c8894a46be2515029ea044b0"), /* Magic Damage Fighter Elemental */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("20fba7e5ceb64b6eaa459f4bb927029a"), /* Attack Bonus */
+
+                    /* Feat Buff */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("3de0359d9480cb549ab6cf1eac51f9dc"), /* Allied Spellcaster */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("5274ddc289f4a7447b7ace68ad8bebb0"), /* Shield of Faith */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("60376ff2340b73346a555979d7763088"), /* Shield of Oracle */
                 };
 
                 foreach (BlueprintBuff buffVar in buffArray) {
