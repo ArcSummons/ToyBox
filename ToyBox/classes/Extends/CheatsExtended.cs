@@ -23,6 +23,7 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("09b4b69169304474296484c74aa12027"), /* True Seeing */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("0adecbf63b614e846bfe15c33f34507e"), /* See Invisibility */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("03464790f40c3c24aa684b57155f3280"), /* Haste */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("58d3b0b98ce4f9346b3c1fb4c7dbc9bf"), /* Haste - Angelic */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("87b8c6270ea85c743afc734dfe99afee"), /* Bless */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("0bd122cf77c3d6948929de45e18e4fed"), /* Bone Shield */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("35f3724d4e8877845af488d167cb8a89"), /* Mind Blank */
