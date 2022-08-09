@@ -16,6 +16,7 @@ namespace ToyBox.classes.Extends {
                     GameHelper.ApplyBuff(Character, buffVar, null);
                 }
             }
+            UIUtility.SendWarning("Buff Simple Extended Applied");
         }
 
         public static void FullBuff2() {
@@ -92,6 +93,8 @@ namespace ToyBox.classes.Extends {
                 foreach (BlueprintBuff buffVar in buffArray) {
                     GameHelper.ApplyBuff(unit, buffVar, null);
                 }
+
+                UIUtility.SendWarning("Buff Complex Extended Applied");
             }
         }
 
