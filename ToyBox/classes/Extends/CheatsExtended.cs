@@ -5,6 +5,7 @@ using Kingmaker.Cheats;
 using Kingmaker.Designers;
 using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UI.Common;
+using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
 
 namespace ToyBox.classes.Extends {
@@ -31,6 +32,7 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b0253e57a75b621428c1b89de5a937d1"), /* Death Ward */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("6784d2dfa2e552448828bffc9ca7a01b"), /* Feather Fall */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("235533b62159790499ced35860636bb2"), /* Freedom of Movement */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("1533e782fca42b84ea370fc1dcbf4fc1"), /* Freedom of Movement */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b87a0e8a961c63a44a952822fe975edb"), /* Resist Acid */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("90ce7dac4b9001e449eb44861397a65f"), /* Resist Cold */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("453201f110f49714fb1d713c1f7bc06d"), /* Resist Electricity */
@@ -51,6 +53,9 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("adcc8e0615fa4e37bd7e5854302203fe"), /* Trickster Double Damage */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("65ea55e5521d43409d102defd153757a"), /* Legend Rest */
 
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("4652211718a2d9f4f860af19ad689663"), /* Protection of Nature */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("dea0dba1f7bff064987e03f1307bfa84"), /* Sense Vital */
+
                     /* Ring Stat Effect */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("a762480e419a3d948bceca0f68f00f3a"), /* AC */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("5e228a4d56de60245a2671db14c2f864"), /* CHA */
@@ -68,11 +73,20 @@ namespace ToyBox.classes.Extends {
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("5fe69b8d755a4bd18e4e67c5613f76af"), /* Slasing Buff */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("4bbff3a1c8894a46be2515029ea044b0"), /* Magic Damage Fighter Elemental */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("20fba7e5ceb64b6eaa459f4bb927029a"), /* Attack Bonus */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("526473a7500e4c439e675b500dcecf1f"), /* AC Bonus */
 
                     /* Feat Buff */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("3de0359d9480cb549ab6cf1eac51f9dc"), /* Allied Spellcaster */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("5274ddc289f4a7447b7ace68ad8bebb0"), /* Shield of Faith */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("60376ff2340b73346a555979d7763088"), /* Shield of Oracle */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("c6d44dc0d8c341748486ae8246cd1b59"), /* Army Bloodlust */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("2236ee9c037148f393d9b4537a303690"), /* Stat Bonus Aura */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("51a51b32ee923dc4a9e9da6684658d92"), /* Blind Aura */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("1044ac71f6200f84bbfbcfa2bcb3bd66"), /* Courage Aura */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("bb3884b112618534c9199da8631634b5"), /* Hospitaler Aura */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("317cf91bc976f49498b445d06ed89add"), /* Resolve Aura */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("52608768f529ef840933e8e85841d7e0"), /* Golem Autumn Aura */
+                    Utilities.GetBlueprintByGuid<BlueprintBuff>("5d2833d39901b844b828f9f13a0353fe"), /* Divine Favor */
                 };
 
                 foreach (BlueprintBuff buffVar in buffArray) {
