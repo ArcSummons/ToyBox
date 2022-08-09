@@ -7,6 +7,7 @@ using Kingmaker.EntitySystem.Entities;
 using Kingmaker.UI.Common;
 using Kingmaker.UnitLogic;
 using Kingmaker.UnitLogic.Buffs.Blueprints;
+using ToyBox.classes.Infrastructure;
 
 namespace ToyBox.classes.Extends {
     public class CheatsExtended {
@@ -118,6 +119,16 @@ namespace ToyBox.classes.Extends {
             GameHelper.GetPlayerCharacter().Stats.Wisdom.BaseValue = 40;
             GameHelper.GetPlayerCharacter().Stats.Charisma.BaseValue = 40;
             UIUtility.SendWarning("Stats init set to 40");
+        }
+
+        public static void GoMaxCaster(Spellbook spellbook) {
+            int curLevel = spellbook.CasterLevel;
+            int maxLevel = spellbook.Blueprint.MaxSpellLevel;
+            while (maxLevel > curLevel) {
+                CasterHelpers.AddCasterLevel(spellbook);
+                CasterHelpers.AddAllSpellsOfSelectedLevel(spellbook, curLevel);
+            }
+            UIUtility.SendWarning("Max Caster Level");
         }
     }
 }

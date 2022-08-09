@@ -14,6 +14,7 @@ using ModKit.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ToyBox.classes.Extends;
 using ToyBox.classes.Infrastructure;
 using ToyBox.Multiclass;
 using UnityEngine;
@@ -604,6 +605,10 @@ namespace ToyBox {
                                 }
                                 if (casterLevel < 40) {
                                     ActionButton("+1 CL", () => CasterHelpers.AddCasterLevel(spellbook), AutoWidth());
+                                }
+                                /* Max Level and All Spells */
+                                if (casterLevel < 40) {
+                                    ActionButton("Max CL & All Spells", () => CheatsExtended.GoMaxCaster(spellbook), AutoWidth());
                                 }
                                 // removes opposition schools; these are not cleared when removing facts; to add new opposition schools, simply add the corresponding fact again
                                 if (spellbook.OppositionSchools.Any()) {
