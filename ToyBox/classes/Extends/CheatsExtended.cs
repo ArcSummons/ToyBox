@@ -123,12 +123,13 @@ namespace ToyBox.classes.Extends {
 
         public static void GoMaxCaster(Spellbook spellbook) {
             int curLevel = spellbook.CasterLevel;
-            int maxLevel = spellbook.Blueprint.MaxSpellLevel;
-            while (maxLevel > curLevel) {
+            int maxLevel = 20;
+            while (curLevel < maxLevel) {
                 CasterHelpers.AddCasterLevel(spellbook);
                 CasterHelpers.AddAllSpellsOfSelectedLevel(spellbook, curLevel);
+                curLevel++;
             }
-            UIUtility.SendWarning("Max Caster Level");
+            UIUtility.SendWarning("Cur Caster Level is at: " + curLevel+" Max Caster Level is at: "+maxLevel+" Applied");
         }
     }
 }
