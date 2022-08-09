@@ -93,9 +93,9 @@ namespace ToyBox.classes.Extends {
                 foreach (BlueprintBuff buffVar in buffArray) {
                     GameHelper.ApplyBuff(unit, buffVar, null);
                 }
-
-                UIUtility.SendWarning("Buff Complex Extended Applied");
             }
+
+            UIUtility.SendWarning("Buff Complex Extended Applied");
         }
 
         public static void StatInit() {
