@@ -46,8 +46,6 @@ namespace ToyBox.classes.Extends {
                     /* EXPERIMENTAL */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("9100128a9fd947b89344ad27f98833ff"), /* Angel Ward Weakness Divine Spell */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("68d82c1249d3e4c47a69946b1eea0dd6"), /* Angel Ward Weakness */
-
-                    Utilities.GetBlueprintByGuid<BlueprintBuff>("3db4a1f9ffa46e7469f817bced1a0df2"), /* Ascendant Summon */
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("b8da3ec045ec04845a126948e1f4fc1a"), /* Heroism Greater */
 
                     Utilities.GetBlueprintByGuid<BlueprintBuff>("256ae19b117c40868248154da12d17b8"), /* Aeon Corruption Protection */
